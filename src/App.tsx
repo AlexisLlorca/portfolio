@@ -10,6 +10,7 @@ import {
   Sparkles,
   Mail,
   Check,
+  GraduationCap,
 } from "lucide-react";
 import { personalData, type Project } from "./data/portfolioData";
 import { ProjectCard } from "./components/ProjectCard";
@@ -109,6 +110,12 @@ export default function App() {
               className="hover:text-emerald-400 transition-colors"
             >
               Habilidades
+            </a>
+            <a
+              href="#formacion"
+              className="hover:text-emerald-400 transition-colors"
+            >
+              Formación
             </a>
             <a
               href="#proyectos"
@@ -306,6 +313,68 @@ export default function App() {
                       {skill}
                     </span>
                   ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* FORMACIÓN ACADÉMICA & ESPECIALIZACIÓN */}
+        <section id="formacion" className="space-y-8">
+          <div className="space-y-2">
+            <div className="flex items-center gap-2 text-emerald-400 text-xs font-mono uppercase tracking-wider">
+              <GraduationCap className="w-3.5 h-3.5" />
+              <span>Trayectoria</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white">
+              Formación Académica & Especialización
+            </h2>
+            <p className="text-slate-400 text-sm">
+              Base técnica en desarrollo multiplataforma y ciberseguridad
+              defensiva.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {personalData.education.map((item, idx) => (
+              <div
+                key={idx}
+                className="flex flex-col justify-between p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-slate-700/80 transition-all hover:-translate-y-1 group"
+              >
+                <div className="space-y-3">
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors">
+                      {item.degree}
+                    </h3>
+                    <span className="text-[11px] font-mono px-2.5 py-1 rounded-full bg-slate-950 border border-slate-800 text-emerald-400 shrink-0">
+                      {item.period}
+                    </span>
+                  </div>
+
+                  <p className="text-xs font-mono text-slate-400">
+                    {item.institution}
+                  </p>
+
+                  <p className="text-xs text-slate-400 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+
+                <div className="space-y-2 pt-4 border-t border-slate-800/80 mt-6">
+                  <p className="text-[11px] font-semibold text-slate-300">
+                    Materias & Enfoques Clave:
+                  </p>
+                  <ul className="space-y-1.5">
+                    {item.highlights.map((h, hIdx) => (
+                      <li
+                        key={hIdx}
+                        className="text-xs text-slate-400 flex items-center gap-2"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400/80 shrink-0" />
+                        <span>{h}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ))}

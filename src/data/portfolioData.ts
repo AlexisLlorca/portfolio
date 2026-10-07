@@ -15,6 +15,14 @@ export interface Project {
   highlights: string[];
 }
 
+export interface EducationItem {
+  degree: string;
+  institution: string;
+  period: string;
+  description: string;
+  highlights: string[];
+}
+
 export const personalData = {
   name: 'Alexis Emmanuel Llorca',
   headline: 'Desarrollador Multiplataforma (DAM) | Especialista en Ciberseguridad',
@@ -25,7 +33,7 @@ export const personalData = {
     linkedin: 'https://www.linkedin.com/in/alexis-e-llorca/', // Alexis podrá poner su perfil exacto
     email: 'alexisllorca9@gmail.com',
   },
-  
+
   skillCategories: [
     {
       title: 'Ciberseguridad & Protección',
@@ -43,6 +51,33 @@ export const personalData = {
       skills: ['Linux (CachyOS / Arch / Debian)', 'Windows', 'Git & GitHub', 'Bash', 'Docker (Básico)'],
     },
   ] as SkillCategory[],
+
+  education: [
+        {
+          degree: 'Máster en Ciberseguridad',
+          institution: 'Formación Especializada',
+          period: 'Completado',
+          description: 'Especialización en seguridad informática defensiva, análisis de vulnerabilidades,hardening de sistemas y auditoría web.',
+          highlights: [
+            'Security by Design',
+            'Buenas Prácticas OWASP',
+            'Hardening de Sistemas y Redes',
+            'Gestión Segura de Secretos y Credenciales',
+          ],
+        },
+        {
+          degree: 'Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)',
+          institution: '2º Curso Académico',
+          period: 'En curso (2025 - Actualidad)',
+          description: 'Desarrollo de software multiplataforma integral: creación de aplicaciones móviles, programación orientada a objetos en Java, servicios concurrentes y en red (PSP), acceso seguro a datos y diseño de interfaces.',
+          highlights: [
+            'Desarrollo de Aplicaciones Móviles (Android / PMDM)',
+            'Programación Orientada a Objetos (Java Avanzado)',
+            'Concurrencia, Procesos y Sockets (PSP)',
+            'Bases de Datos Relacionales (SQL) y Persistencia (JDBC)',
+          ],
+        },
+      ] as EducationItem[],
   projects: [
     {
       id: 'proyectcraft-console',

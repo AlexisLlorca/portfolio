@@ -401,7 +401,8 @@
     <a href="#paso7">7. Enlaces</a>
     <a href="#paso8">8. Copiar Correo</a>
     <a href="#paso9">9. Git</a>
-    <a href="#quiz">10. Repaso Móvil</a>
+    <a href="#paso10">10. Formación</a>
+    <a href="#quiz">11. Repaso Móvil</a>
   </nav>
 
   <!-- CABECERA -->
@@ -1047,11 +1048,46 @@ const handleCopyEmail = () => {
   </section>
 
   <!-- ========================================== -->
-  <!-- PASO 10: REPASO MÓVIL Y FLASHCARDS -->
+  <!-- PASO 10: FORMACIÓN & TRAYECTORIA ACADÉMICA -->
+  <!-- ========================================== -->
+  <section class="section-card" id="paso10">
+    <div class="step-header">
+      <div class="step-number">10</div>
+      <div>
+        <div class="step-title">Formación Académica y Especialización Dual</div>
+        <div class="step-subtitle">Tipado Fuerte de Educación y Mapeo Dinámico en <code>App.tsx</code></div>
+      </div>
+    </div>
+
+    <p>
+      Para transmitir un perfil profesional atractivo para empresas y prácticas de DAM, creamos la sección de Formación destacando el <strong>Máster en Ciberseguridad</strong> y el <strong>2º curso de DAM con Aplicaciones Móviles</strong>.
+    </p>
+
+    <div class="line-breakdown">
+      <div class="line-item">
+        <span class="line-num">1. Interfaz TypeScript</span>
+        <span class="line-code">export interface EducationItem { degree, institution, period, description, highlights }</span>
+        <p class="line-desc">Garantiza que cualquier título añadido en el futuro contenga obligatoriamente todos los datos requeridos por la vista.</p>
+      </div>
+      <div class="line-item">
+        <span class="line-num">2. Mapeo en Cuadrícula</span>
+        <span class="line-code">{personalData.education.map((item, idx) =&gt; ( &lt;div ...&gt; ... &lt;/div&gt; ))}</span>
+        <p class="line-desc">Genera una cuadrícula responsiva (<code>grid md:grid-cols-2</code>) con badges de estado (<em>Completado</em> / <em>En curso</em>) y puntos clave de materias como Android/PMDM y Java.</p>
+      </div>
+      <div class="line-item">
+        <span class="line-num">3. Enlace Navbar</span>
+        <span class="line-code">&lt;a href="#formacion"&gt;Formación&lt;/a&gt;</span>
+        <p class="line-desc">Integrado en la cabecera fija para navegación con salto suave hacia la sección.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- PASO 11: REPASO MÓVIL Y FLASHCARDS -->
   <!-- ========================================== -->
   <section class="section-card" id="quiz">
     <div class="step-header">
-      <div class="step-number">10</div>
+      <div class="step-number">11</div>
       <div>
         <div class="step-title">Autoevaluación Táctil (Flashcards para el móvil)</div>
         <div class="step-subtitle">Toca cada tarjeta para comprobar si dominas el concepto</div>
