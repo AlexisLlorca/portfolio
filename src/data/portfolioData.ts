@@ -48,7 +48,7 @@ export const personalData = {
     {
       title: 'Sistemas & Entorno',
       iconName: 'Terminal',
-      skills: ['Linux (CachyOS / Arch / Debian)', 'Windows', 'Git & GitHub', 'Bash', 'Docker (Básico)'],
+      skills: ['Linux (Debian / Arch / Ubuntu)', 'Windows', 'Git & GitHub', 'Bash', 'Docker (Básico)'],
     },
   ] as SkillCategory[],
 
@@ -74,7 +74,7 @@ export const personalData = {
             'Desarrollo de Aplicaciones Móviles (Android / PMDM)',
             'Programación Orientada a Objetos (Java Avanzado)',
             'Concurrencia, Procesos y Sockets (PSP)',
-            'Bases de Datos Relacionales (SQL) y Persistencia (JDBC)',
+            'Bases de Datos Relacionales (SQL) y PerL / Arcsistencia (JDBC)',
           ],
         },
       ] as EducationItem[],

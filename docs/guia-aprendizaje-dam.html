@@ -402,7 +402,8 @@
     <a href="#paso8">8. Copiar Correo</a>
     <a href="#paso9">9. Git</a>
     <a href="#paso10">10. Formación</a>
-    <a href="#quiz">11. Repaso Móvil</a>
+    <a href="#paso11">11. Terminal</a>
+    <a href="#quiz">12. Repaso Móvil</a>
   </nav>
 
   <!-- CABECERA -->
@@ -1083,11 +1084,55 @@ const handleCopyEmail = () => {
   </section>
 
   <!-- ========================================== -->
-  <!-- PASO 11: REPASO MÓVIL Y FLASHCARDS -->
+  <!-- PASO 11: TERMINAL LINUX INTERACTIVA -->
+  <!-- ========================================== -->
+  <section class="section-card" id="paso11">
+    <div class="step-header">
+      <div class="step-number">11</div>
+      <div>
+        <div class="step-title">La Mini-Terminal Linux Interactiva</div>
+        <div class="step-subtitle">Security by Design, Hooks <code>useRef</code> / <code>useEffect</code> y Scroll Interno Aislado</div>
+      </div>
+    </div>
+
+    <p>
+      Creamos un componente autónomo (<code>src/components/InteractiveTerminal.tsx</code>) que simula una terminal Linux para que cualquier reclutador o visitante pueda interactuar con comandos como <code>whoami</code>, <code>skills</code>, <code>projects</code> o <code>sudo hire</code>.
+    </p>
+
+    <div class="analogy-box analogy-security">
+      <div class="analogy-header">🛡️ Análisis de Seguridad (Security by Design)</div>
+      <ul>
+        <li><strong>Inmunidad a Command Injection:</strong> No hay backend ni ejecución de procesos en el servidor. Opera como una máquina de estados determinista mediante un <code>switch</code> con <strong>Allowlisting estricto</strong>.</li>
+        <li><strong>Inmunidad a XSS:</strong> React escapa por defecto todos los valores de las cadenas renderizadas en el Virtual DOM (trato de texto plano tipo <code>textContent</code>, sin <code>dangerouslySetInnerHTML</code>).</li>
+        <li><strong>Sandbox del Navegador:</strong> Aislamiento total en el cliente sin acceso a ficheros locales ni variables de entorno sensibles.</li>
+      </ul>
+    </div>
+
+    <div class="line-breakdown">
+      <div class="line-item">
+        <span class="line-num">1. Hook useRef</span>
+        <span class="line-code">const terminalBodyRef = useRef&lt;HTMLDivElement&gt;(null);</span>
+        <p class="line-desc">Permite referenciar el contenedor interno de la terminal y enfocar el cursor sin manipular el DOM de forma descontrolada.</p>
+      </div>
+      <div class="line-item">
+        <span class="line-num">2. Hook useEffect (Scroll Interno)</span>
+        <span class="line-code">terminalBodyRef.current.scrollTop = terminalBodyRef.current.scrollHeight;</span>
+        <p class="line-desc">Efecto reactivo que desplaza únicamente el interior de la ventana de la terminal al escribir, sin mover la página web principal.</p>
+      </div>
+      <div class="line-item">
+        <span class="line-num">3. Salidas con Iconos</span>
+        <span class="line-code">"👤 Nombre: Alexis...", "🎓 Titulación...", "🛡️ Filosofía: Security by Design"</span>
+        <p class="line-desc">Respuestas visuales y atractivas con emojis temáticos para todos los comandos del sistema.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- PASO 12: REPASO MÓVIL Y FLASHCARDS -->
   <!-- ========================================== -->
   <section class="section-card" id="quiz">
     <div class="step-header">
-      <div class="step-number">11</div>
+      <div class="step-number">12</div>
       <div>
         <div class="step-title">Autoevaluación Táctil (Flashcards para el móvil)</div>
         <div class="step-subtitle">Toca cada tarjeta para comprobar si dominas el concepto</div>

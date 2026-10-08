@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { personalData, type Project } from "./data/portfolioData";
 import { ProjectCard } from "./components/ProjectCard";
+import { InteractiveTerminal } from "./components/InteractiveTerminal";
 function GithubIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
     <svg
@@ -201,6 +202,8 @@ export default function App() {
               Repositorio GitHub
             </a>
           </div>
+
+          <InteractiveTerminal />
         </section>
 
         {/* SECURITY PILLAR / ENFOQUE DIFERENCIAL */}
