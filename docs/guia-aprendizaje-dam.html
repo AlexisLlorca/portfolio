@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Documentación Maestra y Bitácora de Código | Portfolio DAM</title>
+  <title>Documentación Maestra y Guía de Aprendizaje DAM | Portfolio</title>
   <style>
     :root {
       --bg: #030712;
@@ -33,9 +33,10 @@
       color: var(--text);
       line-height: 1.65;
       padding: 0.75rem;
-      max-width: 900px;
+      max-width: 960px;
       margin: 0 auto;
       font-size: 15px;
+      padding-bottom: 5rem;
     }
 
     /* Navegación rápida superior */
@@ -43,7 +44,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(3, 7, 18, 0.92);
+      background: rgba(3, 7, 18, 0.94);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--card-border);
       padding: 0.75rem 0.5rem;
@@ -95,7 +96,7 @@
     }
 
     h1 {
-      font-size: 1.85rem;
+      font-size: 1.95rem;
       font-weight: 800;
       margin-bottom: 0.5rem;
       color: #fff;
@@ -105,7 +106,7 @@
     .subtitle {
       color: var(--text-muted);
       font-size: 0.95rem;
-      max-width: 650px;
+      max-width: 680px;
       margin: 0 auto;
     }
 
@@ -114,9 +115,9 @@
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 1rem;
-      padding: 1.25rem;
+      padding: 1.35rem;
       margin-bottom: 2rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
     }
 
     .step-header {
@@ -131,14 +132,14 @@
     .step-number {
       background: var(--emerald);
       color: #030712;
-      width: 2rem;
-      height: 2rem;
+      width: 2.2rem;
+      height: 2.2rem;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       flex-shrink: 0;
     }
 
@@ -156,7 +157,7 @@
     h3 {
       font-size: 1.05rem;
       color: var(--emerald);
-      margin: 1.25rem 0 0.5rem;
+      margin: 1.3rem 0 0.5rem;
       display: flex;
       align-items: center;
       gap: 0.4rem;
@@ -175,6 +176,127 @@
     ul, ol {
       padding-left: 1.25rem;
       margin-bottom: 1rem;
+    }
+
+    /* ========================================= */
+    /* CONEXIÓN PASO A PASO (NUEVO) */
+    /* ========================================= */
+    .step-connection {
+      background: rgba(2, 6, 23, 0.75);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 0.75rem;
+      padding: 0.9rem 1rem;
+      margin: 1rem 0 1.25rem;
+    }
+
+    .connection-header {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--sky);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .connection-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .connection-flow {
+        flex-direction: row;
+        align-items: stretch;
+      }
+    }
+
+    .conn-box {
+      flex: 1;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid var(--card-border);
+      border-radius: 0.5rem;
+      padding: 0.6rem 0.75rem;
+      font-size: 0.82rem;
+    }
+
+    .conn-box.conn-prev { border-left: 3px solid var(--purple); }
+    .conn-box.conn-current { border-left: 3px solid var(--emerald); background: rgba(16, 185, 129, 0.05); }
+    .conn-box.conn-next { border-left: 3px solid var(--sky); }
+
+    .conn-label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+    .conn-prev .conn-label { color: var(--purple); }
+    .conn-current .conn-label { color: var(--emerald); }
+    .conn-next .conn-label { color: var(--sky); }
+
+    .conn-text {
+      color: #e2e8f0;
+      line-height: 1.4;
+    }
+
+    .conn-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      padding: 0 0.25rem;
+    }
+
+    /* Diagrama de Arquitectura Global */
+    .architecture-diagram {
+      background: #020617;
+      border: 1px solid var(--card-border);
+      border-radius: 0.8rem;
+      padding: 1.25rem;
+      margin: 1rem 0;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .arch-step-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 0.5rem;
+      padding: 0.75rem 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .arch-step-row {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .arch-badge {
+      font-family: monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 0.3rem;
+      background: var(--emerald-glow);
+      color: var(--emerald);
+      border: 1px solid var(--emerald);
+      display: inline-block;
+      width: fit-content;
+    }
+
+    .arch-desc {
+      font-size: 0.85rem;
+      color: #cbd5e1;
     }
 
     /* Cajas de código completo con Scroll */
@@ -199,10 +321,10 @@
     }
 
     pre {
-      padding: 1rem;
+      padding: 1.1rem;
       overflow-x: auto;
       font-size: 0.82rem;
-      line-height: 1.55;
+      line-height: 1.6;
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
       color: #e2e8f0;
       tab-size: 2;
@@ -215,6 +337,12 @@
       border-radius: 0.25rem;
       font-size: 0.88em;
       color: var(--emerald);
+    }
+
+    /* Resaltado de comentarios en el código */
+    .token-comment {
+      color: #64748b;
+      font-style: italic;
     }
 
     /* Tablas y Comparaciones Java vs React */
@@ -291,61 +419,6 @@
       margin: 0;
     }
 
-    /* Alertas y Callouts */
-    .callout {
-      padding: 0.9rem 1rem;
-      border-radius: 0.6rem;
-      margin: 1rem 0;
-      font-size: 0.9rem;
-      border-left: 4px solid;
-    }
-
-    .callout-info {
-      background: rgba(56, 189, 248, 0.08);
-      border-color: var(--sky);
-      color: #bae6fd;
-    }
-
-    .callout-warning {
-      background: rgba(245, 158, 11, 0.08);
-      border-color: var(--amber);
-      color: #fde68a;
-    }
-
-    .callout-success {
-      background: rgba(16, 185, 129, 0.08);
-      border-color: var(--emerald);
-      color: #a7f3d0;
-    }
-
-    /* Acordeones desplegables */
-    details {
-      background: rgba(2, 6, 23, 0.5);
-      border: 1px solid var(--card-border);
-      border-radius: 0.6rem;
-      margin-bottom: 0.75rem;
-      overflow: hidden;
-    }
-
-    summary {
-      padding: 0.8rem 1rem;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.92rem;
-      color: #f8fafc;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      list-style: none;
-      user-select: none;
-    }
-
-    summary::-webkit-details-marker { display: none; }
-    summary::after { content: "▼"; font-size: 0.7rem; color: var(--emerald); transition: transform 0.2s; }
-    details[open] summary::after { transform: rotate(180deg); }
-    details[open] summary { border-bottom: 1px solid var(--card-border); background: var(--emerald-glow); }
-    .details-body { padding: 1rem; }
-
     /* Tarjetas interactivas de autoevaluación */
     .quiz-card {
       background: linear-gradient(145deg, #0b1329, #131c38);
@@ -378,6 +451,205 @@
       display: block;
     }
 
+    /* ========================================= */
+    /* CHAT ASISTENTE TUTOR DAM (100% OFFLINE) */
+    /* ========================================= */
+    .tutor-fab {
+      position: fixed;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      z-index: 999;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #020617;
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 0.75rem 1.2rem;
+      border-radius: 9999px;
+      border: none;
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .tutor-fab:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(16, 185, 129, 0.55);
+    }
+
+    .tutor-modal {
+      display: none;
+      position: fixed;
+      bottom: 5rem;
+      right: 1.25rem;
+      width: calc(100vw - 2.5rem);
+      max-width: 440px;
+      height: 540px;
+      max-height: calc(100vh - 7rem);
+      background: #090e1a;
+      border: 1px solid var(--emerald);
+      border-radius: 1.25rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      flex-direction: column;
+      overflow: hidden;
+      animation: modalSlideUp 0.25s ease-out;
+    }
+
+    @keyframes modalSlideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .tutor-modal.open {
+      display: flex;
+    }
+
+    .tutor-header {
+      background: #0f172a;
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .tutor-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tutor-close {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.4rem;
+    }
+
+    .tutor-close:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .tutor-suggestions {
+      background: #020617;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      gap: 0.4rem;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .suggestion-chip {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--card-border);
+      color: var(--emerald);
+      font-size: 0.72rem;
+      padding: 0.25rem 0.55rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .suggestion-chip:hover {
+      background: var(--emerald-glow);
+      border-color: var(--emerald);
+    }
+
+    .tutor-chat-body {
+      flex: 1;
+      padding: 0.9rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      background: #040814;
+    }
+
+    .chat-bubble {
+      max-width: 88%;
+      padding: 0.65rem 0.85rem;
+      border-radius: 0.8rem;
+      font-size: 0.84rem;
+      line-height: 1.45;
+    }
+
+    .bubble-bot {
+      align-self: flex-start;
+      background: #0f172a;
+      border: 1px solid var(--card-border);
+      color: #e2e8f0;
+      border-top-left-radius: 0.2rem;
+    }
+
+    .bubble-bot strong {
+      color: var(--emerald);
+    }
+
+    .bubble-user {
+      align-self: flex-end;
+      background: #10b981;
+      color: #020617;
+      font-weight: 500;
+      border-top-right-radius: 0.2rem;
+    }
+
+    .chat-jump-btn {
+      display: inline-block;
+      margin-top: 0.4rem;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--sky);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .tutor-input-area {
+      padding: 0.75rem;
+      background: #0f172a;
+      border-top: 1px solid var(--card-border);
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .tutor-input {
+      flex: 1;
+      background: #020617;
+      border: 1px solid var(--card-border);
+      border-radius: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      color: #fff;
+      font-size: 0.85rem;
+      outline: none;
+    }
+
+    .tutor-input:focus {
+      border-color: var(--emerald);
+    }
+
+    .tutor-send-btn {
+      background: var(--emerald);
+      color: #020617;
+      border: none;
+      border-radius: 0.5rem;
+      padding: 0.5rem 0.85rem;
+      font-weight: 700;
+      font-size: 0.82rem;
+      cursor: pointer;
+    }
+
     footer {
       text-align: center;
       padding: 2.5rem 1rem;
@@ -392,26 +664,74 @@
 
   <!-- NAVEGACIÓN RÁPIDA SUPERIOR -->
   <nav class="top-nav">
+    <a href="#arquitectura">🗺️ Conexiones</a>
     <a href="#paso1">1. Datos</a>
-    <a href="#paso2">2. App.tsx Inicial</a>
-    <a href="#paso3">3. Modularizar</a>
+    <a href="#paso2">2. Scaffolding</a>
+    <a href="#paso3">3. Tailwind</a>
     <a href="#paso4">4. ProjectCard</a>
-    <a href="#paso5">5. Depuración</a>
-    <a href="#paso6">6. Conexión</a>
-    <a href="#paso7">7. Enlaces</a>
-    <a href="#paso8">8. Copiar Correo</a>
-    <a href="#paso9">9. Git</a>
+    <a href="#paso5">5. App.tsx</a>
+    <a href="#paso6">6. Props</a>
+    <a href="#paso7">7. Iconos</a>
+    <a href="#paso8">8. Portapapeles</a>
+    <a href="#paso9">9. Git & CI/CD</a>
     <a href="#paso10">10. Formación</a>
     <a href="#paso11">11. Terminal</a>
-    <a href="#quiz">12. Repaso Móvil</a>
+    <a href="#quiz">12. Repaso Flashcards</a>
   </nav>
 
   <!-- CABECERA -->
   <header>
-    <div class="badge">DAM 2º &bull; Ciberseguridad &bull; React &bull; TypeScript</div>
-    <h1>Documentación Maestra del Portfolio</h1>
-    <p class="subtitle">Guía de aprendizaje paso a paso, código completo de principio a fin y explicación línea por línea para entender toda la arquitectura.</p>
+    <div class="badge">Guía Maestra 100% Autónoma DAM</div>
+    <h1>Documentación y Código Comentado</h1>
+    <p class="subtitle">
+      Aprende cada línea de código de tu portfolio, cómo se conectan los archivos entre sí y utiliza el Tutor Virtual integrado offline.
+    </p>
   </header>
+
+  <!-- ========================================== -->
+  <!-- MAPA DE ARQUITECTURA Y CONEXIONES (NUEVO) -->
+  <!-- ========================================== -->
+  <section class="section-card" id="arquitectura">
+    <div class="step-header">
+      <div class="step-number" style="background:var(--sky)">🗺️</div>
+      <div>
+        <div class="step-title">Mapa de Arquitectura y Conexiones del Proyecto</div>
+        <div class="step-subtitle">Cómo viajan los datos y cómo colaboran los archivos</div>
+      </div>
+    </div>
+
+    <p>
+      Una aplicación moderna en React + TypeScript no es un único bloque monolítico, sino una <strong>red modular de piezas conectadas</strong>. Aquí puedes ver el flujo exacto:
+    </p>
+
+    <div class="architecture-diagram">
+      <div class="arch-step-row">
+        <span class="arch-badge">1. Capa de Datos</span>
+        <span class="arch-desc"><code>src/data/portfolioData.ts</code> define las interfaces (tipos) y almacena los datos reales (nombre, biografía, proyectos, formación).</span>
+      </div>
+      <div style="text-align:center; color:var(--sky); font-size:1.1rem">⬇️ <em>import { personalData, type Project }</em></div>
+
+      <div class="arch-step-row">
+        <span class="arch-badge" style="background:var(--emerald-glow); color:var(--emerald); border-color:var(--emerald)">2. Orquestador Central</span>
+        <span class="arch-desc"><code>src/App.tsx</code> recibe los datos, estructura la página (Hero, Seguridad, Formación, Contacto) y coordina los componentes hijos.</span>
+      </div>
+      <div style="text-align:center; color:var(--emerald); font-size:1.1rem">⬇️ <em>Pasa props y renderiza componentes</em></div>
+
+      <div class="arch-step-row">
+        <span class="arch-badge" style="background:rgba(192, 132, 252, 0.15); color:var(--purple); border-color:var(--purple)">3. Componentes Especializados</span>
+        <span class="arch-desc">
+          • <code>ProjectCard.tsx</code> recibe un proyecto y gestiona su estado desplegable.<br>
+          • <code>InteractiveTerminal.tsx</code> ejecuta comandos simulados con allowlist seguro y scroll aislado.
+        </span>
+      </div>
+      <div style="text-align:center; color:var(--purple); font-size:1.1rem">⬇️ <em>npm run build & git push origin master</em></div>
+
+      <div class="arch-step-row">
+        <span class="arch-badge" style="background:rgba(245, 158, 11, 0.15); color:var(--amber); border-color:var(--amber)">4. Despliegue CI/CD</span>
+        <span class="arch-desc"><code>deploy.yml</code> en GitHub Actions toma el resultado compilado en <code>dist/</code> y lo publica en vivo en GitHub Pages.</span>
+      </div>
+    </div>
+  </section>
 
   <!-- ========================================== -->
   <!-- PASO 1: CAPA DE DATOS -->
@@ -425,175 +745,234 @@
       </div>
     </div>
 
+    <!-- CONEXIÓN VISUAL -->
+    <div class="step-connection">
+      <div class="connection-header">🔗 Conexión de este paso en el proyecto:</div>
+      <div class="connection-flow">
+        <div class="conn-box conn-prev">
+          <span class="conn-label">Origen</span>
+          <span class="conn-text">Tus datos personales, formación de DAM/Ciberseguridad y proyectos.</span>
+        </div>
+        <div class="conn-arrow">➔</div>
+        <div class="conn-box conn-current">
+          <span class="conn-label">Este paso crea</span>
+          <span class="conn-text">Interfaces estrictas (<code>Project</code>, <code>SkillCategory</code>) y el objeto exportado <code>personalData</code>.</span>
+        </div>
+        <div class="conn-arrow">➔</div>
+        <div class="conn-box conn-next">
+          <span class="conn-label">Destino</span>
+          <span class="conn-text">Se importa en <code>App.tsx</code> y <code>ProjectCard.tsx</code> como Fuente Única de Verdad (Single Source of Truth).</span>
+        </div>
+      </div>
+    </div>
+
     <p>
-      El primer paso que hicimos fue aplicar una regla de oro de la ingeniería de software: <strong>separar los datos de la interfaz visual</strong> (Principio de Responsabilidad Única y <em>Single Source of Truth</em>).
+      El primer paso fue aplicar una regla de oro de la ingeniería de software: <strong>separar los datos de la interfaz visual</strong> (Principio de Responsabilidad Única).
     </p>
 
     <div class="analogy-box analogy-java">
       <div class="analogy-header">☕ Equivalencia con Java / DAM</div>
       <p>
-        En Java creas clases POJO / DTO (como <code>Proyecto.java</code>) con atributos privados y getters/setters, o una conexión DAO a base de datos. En TypeScript usamos <strong>interfaces puras</strong> para definir el modelo de datos sin sobrecargar la memoria.
+        En Java creas clases DTO/POJO (como <code>Proyecto.java</code>) con atributos privados y getters/setters, o entidades JPA. En TypeScript usamos <strong>interfaces</strong> para definir el contrato sin sobrecargar la memoria en tiempo de ejecución.
       </p>
     </div>
 
-    <h3>Código Completo de <code>src/data/portfolioData.ts</code></h3>
+    <h3>Código Comentado Línea por Línea: <code>src/data/portfolioData.ts</code></h3>
     <div class="code-container">
       <div class="code-header">
         <span>src/data/portfolioData.ts</span>
-        <span>TypeScript</span>
+        <span>TypeScript Comentado</span>
       </div>
-      <pre><code>export interface SkillCategory {
-  title: string;
-  iconName: string;
-  skills: string[];
+      <pre><code>// 1. Exporta la interfaz para tipar las categorías de habilidades
+export interface SkillCategory {
+  title: string;       // Línea 2: Título visible del grupo (ej: "Ciberseguridad & Protección")
+  iconName: string;    // Línea 3: Nombre clave del icono que usaremos de lucide-react (ej: "Shield")
+  skills: string[];    // Línea 4: Lista (array) de nombres de tecnologías o competencias
 }
 
+// 5. Exporta el contrato obligatorio que debe cumplir cada proyecto
 export interface Project {
-  id: string;
-  title: string;
-  category: 'Desarrollo' | 'Ciberseguridad' | 'Multiplataforma';
-  description: string;
-  tags: string[];
-  githubUrl?: string;
-  demoUrl?: string;
-  highlights: string[];
+  id: string;          // Línea 6: Clave única identificativa (PRIMARY KEY en React para reconciliación)
+  title: string;       // Línea 7: Nombre comercial del proyecto (ej: "ProyectCraft Console")
+  category: 'Desarrollo' | 'Ciberseguridad' | 'Multiplataforma'; // Línea 8: Unión de tipos estrictos
+  description: string; // Línea 9: Resumen del propósito y arquitectura de la aplicación
+  tags: string[];      // Línea 10: Array de tecnologías utilizadas (Java, Android, React, etc.)
+  githubUrl?: string;  // Línea 11: Propiedad opcional (?) con el enlace al repositorio de GitHub
+  demoUrl?: string;    // Línea 12: Propiedad opcional (?) con el enlace de despliegue en vivo
+  highlights: string[];// Línea 13: Array con los puntos fuertes y decisiones técnicas
 }
 
+// 14. Exporta la constante con la información real del alumno (Single Source of Truth)
+// Usamos 'const' para que la referencia al objeto sea inmutable y no se pueda reasignar
 export const personalData = {
-  name: 'Alexis Emmanuel Llorca',
-  headline: 'Desarrollador Multiplataforma (DAM) | Especialista en Ciberseguridad',
-  bio: 'Estudiante de 2º de Desarrollo de Aplicaciones Multiplataforma con Máster en Ciberseguridad. Apasionado por el desarrollo de software seguro, la protección de sistemas y la automatización. Enfoque práctico en crear aplicaciones robustas desde el diseño (Security by Design).',
-  location: 'España',
+  name: 'Alexis Emmanuel Llorca',  // Línea 16: Tu nombre completo para la cabecera
+  headline: 'Desarrollador Multiplataforma (DAM) | Especialista en Ciberseguridad', // Línea 17: Titular
+  bio: 'Estudiante de 2º de DAM con Máster en Ciberseguridad...', // Línea 18: Biografía descriptiva
+  location: 'España', // Línea 19: Ubicación geográfica
   links: {
-    github: 'https://github.com/AlexisLlorca',
-    linkedin: 'https://www.linkedin.com/in/alexis-e-llorca/',
+    github: 'https://github.com/AlexisLlorca', // Línea 21: Enlace directo a tu perfil de GitHub
+    linkedin: 'https://www.linkedin.com/in/alexis-e-llorca/', // Línea 22: Enlace directo a LinkedIn
+    email: 'alexisllorca9@gmail.com', // Línea 23: Correo para el botón de copiado al portapapeles
   },
   skillCategories: [
     {
-      title: 'Ciberseguridad & Protección',
+      title: 'Ciberseguridad & Protección', // Línea 26: Especialidad técnica
       iconName: 'Shield',
-      skills: ['Security by Design', 'Análisis de Vulnerabilidades', 'Seguridad en Redes', 'Hardening de Sistemas', 'Buenas Prácticas OWASP'],
+      skills: ['Security by Design', 'Análisis de Vulnerabilidades', 'Hardening', 'OWASP Top 10'],
     },
     {
-      title: 'Desarrollo de Software',
+      title: 'Desarrollo de Software', // Línea 31: Programación pura
       iconName: 'Code2',
-      skills: ['Java (Avanzado)', 'Kotlin (Android)', 'SQL (Bases de Datos)', 'JavaScript', 'HTML5 / CSS3', 'Python (en progreso)'],
+      skills: ['Java (Avanzado)', 'Kotlin (Android)', 'SQL (Bases de Datos)', 'JavaScript', 'Python'],
     },
     {
-      title: 'Sistemas & Entorno',
+      title: 'Sistemas & Entorno', // Línea 36: Plataforma y DevOps
       iconName: 'Terminal',
-      skills: ['Linux (CachyOS / Arch / Debian)', 'Windows', 'Git & GitHub', 'Bash', 'Docker (Básico)'],
+      skills: ['Linux (Debian / Arch / Ubuntu)', 'Windows', 'Git & GitHub', 'Bash', 'Docker (Básico)'],
     },
-  ] as SkillCategory[],
+  ] as SkillCategory[], // Línea 40: 'as' realiza una aserción de tipo para validar que cumple la interfaz
   projects: [
     {
-      id: 'proyectcraft-console',
+      id: 'proyectcraft-console', // Línea 43: ID del proyecto
       title: 'ProyectCraft Console',
       category: 'Desarrollo',
-      description: 'Aplicación de consola estructurada en Java aplicando programación orientada a objetos, control de excepciones y lógica modular.',
+      description: 'Aplicación de consola estructurada en Java aplicando OOP, modularidad y robustez.',
       tags: ['Java', 'OOP', 'Git', 'Consola'],
       highlights: ['Manejo estructurado de datos', 'Validación de entradas de usuario'],
     },
     {
       id: 'dam-practicas-seguras',
-      title: 'Proyectos de 2º DAM (PSP & Acceso a Datos)',
+      title: 'Prácticas DAM Seguras',
       category: 'Multiplataforma',
-      description: 'Implementación de servicios en red, concurrencia de hilos en Java (PSP) y persistencia segura de datos mediante JDBC/SQL.',
-      tags: ['Java', 'Concurrencia', 'SQL', 'Seguridad'],
-      highlights: ['Prevención de inyección SQL', 'Gestión eficiente de procesos y sockets'],
+      description: 'Arquitectura cliente-servidor con sockets, concurrencia (hilos) y persistencia JDBC.',
+      tags: ['Java', 'PSP', 'Sockets', 'Hilos', 'JDBC'],
+      highlights: ['Comunicaciones cifradas', 'Concurrencia multihilo segura'],
     },
     {
-      id: 'automated-pipeline',
-      title: 'DevSecOps & Automation Suite',
+      id: 'devsecops-suite',
+      title: 'DevSecOps Suite',
       category: 'Ciberseguridad',
-      description: 'Suite de scripts y automatizaciones para análisis de datos, extracción segura de información y despliegue continuo.',
-      tags: ['Python', 'CI/CD', 'Automatización', 'Seguridad'],
-      highlights: ['Gestión segura de credenciales (.env)', 'Flujos automáticos en GitHub Actions'],
+      description: 'Scripts de automatización en Bash y auditoría para análisis de código y secretos.',
+      tags: ['Bash', 'Linux', 'Auditoría', 'OWASP'],
+      highlights: ['Detección de credenciales expuestas', 'Integración en CI/CD'],
     },
-  ] as Project[],
+  ] as Project[], // Línea 72: Valida que la lista de proyectos cumple estrictamente la interfaz Project
 };</code></pre>
-    </div>
-
-    <h3>Explicación Línea por Línea de los Conceptos Clave:</h3>
-    <div class="line-breakdown">
-      <div class="line-item">
-        <span class="line-num">Líneas 1-5</span>
-        <span class="line-code">export interface SkillCategory { ... }</span>
-        <p class="line-desc">Define la estructura que debe tener cada tarjeta de habilidades: un título de texto (<code>string</code>), un nombre de icono (<code>string</code>) y un array de strings (<code>string[]</code>).</p>
-      </div>
-      <div class="line-item">
-        <span class="line-num">Línea 10</span>
-        <span class="line-code">category: 'Desarrollo' | 'Ciberseguridad' | 'Multiplataforma';</span>
-        <p class="line-desc"><strong>Tipo Literal Union:</strong> En Java usarías un <code>enum Categoria</code>. Aquí en TypeScript le decimos al compilador que la categoría SOLO puede ser uno de esos 3 textos exactos. Si alguien escribe <em>'Backend'</em> por error, TypeScript arroja un error en tiempo de compilación.</p>
-      </div>
-      <div class="line-item">
-        <span class="line-num">Líneas 13-14</span>
-        <span class="line-code">githubUrl?: string;</span>
-        <p class="line-desc">El signo de interrogación <code>?</code> indica un <strong>campo opcional</strong>. En Java tendrías que comprobar si es <code>null</code>; en TypeScript esto permite que un proyecto no tenga enlace sin que el código falle.</p>
-      </div>
-      <div class="line-item">
-        <span class="line-num">Líneas 18-70</span>
-        <span class="line-code">export const personalData = { ... }</span>
-        <p class="line-desc">Un objeto constante que contiene toda tu información profesional. Si mañana quieres cambiar un proyecto o tu LinkedIn, <strong>solo tocas este archivo</strong> y no tienes que tocar el código de la web.</p>
-      </div>
     </div>
   </section>
 
   <!-- ========================================== -->
-  <!-- PASO 2: APP.TSX INICIAL -->
+  <!-- PASO 2: SCAFFOLDING Y VITE -->
   <!-- ========================================== -->
   <section class="section-card" id="paso2">
     <div class="step-header">
       <div class="step-number">2</div>
       <div>
-        <div class="step-title">La Vista Inicial: App.tsx como Monolito</div>
-        <div class="step-subtitle">Archivo: <code>src/App.tsx</code></div>
+        <div class="step-title">Estructura Base del Proyecto (Scaffolding con Vite)</div>
+        <div class="step-subtitle">Archivos: <code>package.json</code>, <code>index.html</code>, <code>src/main.tsx</code></div>
       </div>
     </div>
 
-    <p>
-      Inicialmente construimos toda la interfaz dentro de <code>App.tsx</code>: la barra de navegación, la cabecera (Hero), el bloque diferencial de Ciberseguridad, las habilidades y el listado de proyectos.
-    </p>
-
-    <div class="callout callout-info">
-      📌 <strong>¿Cómo funcionaba el filtrado de proyectos en App.tsx?</strong><br>
-      Utilizamos un estado reactivo de React para filtrar proyectos por categoría en tiempo real:
-      <pre style="margin-top:0.5rem"><code>const [selectedCategory, setSelectedCategory] = useState&lt;string&gt;('Todos')
-
-const filteredProjects = selectedCategory === 'Todos'
-  ? personalData.projects
-  : personalData.projects.filter(p => p.category === selectedCategory)</code></pre>
-      Al hacer clic en un botón de categoría, React re-ejecuta el filtro y redibuja la lista en milisegundos sin recargar la página.
+    <!-- CONEXIÓN VISUAL -->
+    <div class="step-connection">
+      <div class="connection-header">🔗 Conexión de este paso en el proyecto:</div>
+      <div class="connection-flow">
+        <div class="conn-box conn-prev">
+          <span class="conn-label">Origen</span>
+          <span class="conn-text">Node.js y npm en tu sistema operativo CachyOS.</span>
+        </div>
+        <div class="conn-arrow">➔</div>
+        <div class="conn-box conn-current">
+          <span class="conn-label">Este paso procesa</span>
+          <span class="conn-text">Configura el servidor de desarrollo ultrarrápido Vite y el punto de entrada TypeScript.</span>
+        </div>
+        <div class="conn-arrow">➔</div>
+        <div class="conn-box conn-next">
+          <span class="conn-label">Destino</span>
+          <span class="conn-text">Inyecta el componente raíz <code>&lt;App /&gt;</code> en el <code>&lt;div id="root"&gt;</code> del HTML.</span>
+        </div>
+      </div>
     </div>
 
-    <p>
-      <strong>El problema que detectamos:</strong> Cada tarjeta de proyecto ocupaba más de 45 líneas de código dentro de un bucle <code>.map()</code> en mitad de <code>App.tsx</code>. El archivo empezó a superar las 350 líneas, haciéndose difícil de mantener y leer.
-    </p>
+    <h3>Código Comentado: <code>src/main.tsx</code></h3>
+    <div class="code-container">
+      <div class="code-header">
+        <span>src/main.tsx</span>
+        <span>Punto de Entrada</span>
+      </div>
+      <pre><code>// 1. Importa StrictMode para detectar efectos secundarios y prácticas obsoletas en desarrollo
+import { StrictMode } from 'react'
+// 2. Importa createRoot desde react-dom/client para inicializar el motor de renderizado concurrente
+import { createRoot } from 'react-dom/client'
+// 3. Importa los estilos globales de Tailwind CSS
+import './index.css'
+// 4. Importa el componente raíz de la aplicación
+import App from './App.tsx'
+
+// 5. Busca el elemento <div id="root"> en index.html y monta la aplicación en el DOM
+createRoot(document.getElementById('root')!).render(
+  // 6. StrictMode envuelve el árbol de componentes para ejecutar comprobaciones de seguridad
+  &lt;StrictMode&gt;
+    &lt;App /&gt; {/* Línea 7: Renderiza tu componente App */}
+  &lt;/StrictMode&gt;,
+)</code></pre>
+    </div>
   </section>
 
   <!-- ========================================== -->
-  <!-- PASO 3: POR QUÉ MODULARIZAR -->
+  <!-- PASO 3: TAILWIND CSS -->
   <!-- ========================================== -->
   <section class="section-card" id="paso3">
     <div class="step-header">
       <div class="step-number">3</div>
       <div>
-        <div class="step-title">La Decisión de Arquitectura: Modularizar</div>
-        <div class="step-subtitle">Extracción a <code>src/components/ProjectCard.tsx</code></div>
+        <div class="step-title">Estilos Modernos: Configuración de Tailwind CSS</div>
+        <div class="step-subtitle">Archivos: <code>tailwind.config.js</code> y <code>src/index.css</code></div>
       </div>
     </div>
 
-    <p>
-      Decidimos extraer cada tarjeta de proyecto a su propio componente independiente. ¿Por qué es crucial para ti como futuro desarrollador?
-    </p>
+    <!-- CONEXIÓN VISUAL -->
+    <div class="step-connection">
+      <div class="connection-header">🔗 Conexión de este paso en el proyecto:</div>
+      <div class="connection-flow">
+        <div class="conn-box conn-prev">
+          <span class="conn-label">Origen</span>
+          <span class="conn-text">Directivas de PostCSS y Tailwind configuradas en el proyecto.</span>
+        </div>
+        <div class="conn-arrow">➔</div>
+        <div class="conn-box conn-current">
+          <span class="conn-label">Este paso procesa</span>
+          <span class="conn-text">Genera clases CSS utilitarias bajo demanda (JIT) para paleta oscura, bordes y flexbox.</span>
+        </div>
+        <div class="conn-arrow">➔</div>
+        <div class="conn-box conn-next">
+          <span class="conn-label">Destino</span>
+          <span class="conn-text">Permite diseñar directamente en JSX usando clases como <code>bg-slate-950</code> o <code>border-emerald-500</code>.</span>
+        </div>
+      </div>
+    </div>
 
-    <div class="analogy-box analogy-security">
-      <div class="analogy-header">🛡️ Principio SOLID y Mantenimiento Seguro</div>
-      <ul>
-        <li><strong>Single Responsibility:</strong> <code>App.tsx</code> solo debe encargarse de la estructura y maquetación de la página, NO de cómo se abre o cierra una tarjeta concreta.</li>
-        <li><strong>Estado Aislado:</strong> Si una tarjeta tiene un botón para desplegar detalles (<code>showDetails</code>), solo ESA tarjeta debe tener memoria y cambiar. Las demás no se enteran ni consumen ciclos de cálculo.</li>
-        <li><strong>Reutilización:</strong> Mañana puedes usar <code>&lt;ProjectCard /&gt;</code> en otra vista, en un modal o en una página de detalle sin duplicar código.</li>
-      </ul>
+    <h3>Código Comentado: <code>src/index.css</code></h3>
+    <div class="code-container">
+      <div class="code-header">
+        <span>src/index.css</span>
+        <span>Directivas Tailwind</span>
+      </div>
+      <pre><code>/* 1. Inyecta los estilos base de reset (márgenes cero, normalización de fuentes) */
+@tailwind base;
+
+/* 2. Inyecta componentes utilitarios reutilizables */
+@tailwind components;
+
+/* 3. Inyecta todas las clases de utilidad generadas bajo demanda (flex, grid, p-4, text-emerald-400) */
+@tailwind utilities;
+
+/* 4. Estilos aplicados directamente a la etiqueta body para el fondo oscuro uniforme */
+body {
+  background-color: #020617; /* Slate 950 muy oscuro para contraste profesional */
+  color: #f8fafc;            /* Texto claro de alta legibilidad */
+  font-family: system-ui, -apple-system, sans-serif; /* Tipografía limpia del sistema */
+}</code></pre>
     </div>
   </section>
 
@@ -604,56 +983,88 @@ const filteredProjects = selectedCategory === 'Todos'
     <div class="step-header">
       <div class="step-number">4</div>
       <div>
-        <div class="step-title">ProjectCard.tsx: Código Completo y Análisis Detallado</div>
-        <div class="step-subtitle">El componente interactivo que transcribiste</div>
+        <div class="step-title">ProjectCard.tsx: Modularización y Estado Local</div>
+        <div class="step-subtitle">Archivo: <code>src/components/ProjectCard.tsx</code></div>
       </div>
     </div>
 
+    <!-- CONEXIÓN VISUAL -->
+    <div class="step-connection">
+      <div class="connection-header">🔗 Conexión de este paso en el proyecto:</div>
+      <div class="connection-flow">
+        <div class="conn-box conn-prev">
+          <span class="conn-label">Origen</span>
+          <span class="conn-text">Recibe un objeto individual <code>project: Project</code> desde <code>App.tsx</code> mediante Props.</span>
+        </div>
+        <div class="conn-arrow">➔</div>
+        <div class="conn-box conn-current">
+          <span class="conn-label">Este paso procesa</span>
+          <span class="conn-text">Gestiona el estado interactivo <code>showDetails</code> con <code>useState</code> para desplegar o plegar.</span>
+        </div>
+        <div class="conn-arrow">➔</div>
+        <div class="conn-box conn-next">
+          <span class="conn-label">Destino</span>
+          <span class="conn-text">Pinta en el navegador una tarjeta interactiva con enlaces seguros a GitHub y etiquetas visuales.</span>
+        </div>
+      </div>
+    </div>
+
+    <h3>Código Comentado Línea por Línea: <code>src/components/ProjectCard.tsx</code></h3>
     <div class="code-container">
       <div class="code-header">
         <span>src/components/ProjectCard.tsx</span>
-        <span>React + TypeScript</span>
+        <span>React + TypeScript Comentado</span>
       </div>
-      <pre><code>import { useState } from "react";
+      <pre><code>// 1. Importa el hook useState de React para manejar el estado de apertura/cierre de la tarjeta
+import { useState } from "react";
+// 2. Importa la interfaz Project como tipo exclusivo de TypeScript (no añade peso al bundle JavaScript final)
 import type { Project } from "../data/portfolioData";
+// 3. Importa los iconos vectoriales de flecha arriba y abajo desde lucide-react
 import { ChevronDown, ChevronUp } from "lucide-react";
 
+// 4. Define la interfaz de Props: contrato que obliga a que le pasemos un objeto 'project' válido
 interface ProjectCardProps {
-  project: Project;
+  project: Project; // Objeto de tipo Project modelado en el Paso 1
 }
 
+// 5. Componente auxiliar SVG para el icono de GitHub (personalizado con viewBox y trazos limpios)
 function GithubIcon({ className = "w-3.5 h-3.5" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-      <path d="m9 18c-4.51 2-5-2-7-2" />
-    </svg>
+    &lt;svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"&gt;
+      &lt;path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" /&gt;
+      &lt;path d="m9 18c-4.51 2-5-2-7-2" /&gt;
+    &lt;/svg&gt;
   );
 }
 
+// 6. Exporta el componente funcional ProjectCard recibiendo la prop desestructurada { project }
 export function ProjectCard({ project }: ProjectCardProps) {
+  // 7. Estado booleano: 'showDetails' guarda si la tarjeta está abierta (false por defecto)
+  // 'setShowDetails' es la función que le avisa a React para redibujar este componente
   const [showDetails, setShowDetails] = useState&lt;boolean&gt;(false);
 
+  // 8. Función manejadora que conmuta el estado de verdadero a falso y viceversa
   const toggleDetails = () => {
     setShowDetails(!showDetails);
   };
 
   return (
+    // 9. Contenedor principal de la tarjeta con bordes, esquinas redondeadas y micro-interacción hover
     &lt;div className="flex flex-col justify-between p-6 rounded-2xl bg-slate-900/40 border border-slate-800 hover:border-slate-700 transition-all hover:-translate-y-1 group"&gt;
       &lt;div className="space-y-4"&gt;
-        {/* Categoría y enlaces de acción */}
+        {/* 10. Cabecera interna: categoría a la izquierda y botón de GitHub a la derecha */}
         &lt;div className="flex items-center justify-between"&gt;
           &lt;span className="text-[11px] font-mono px-2 py-0.5 rounded-md bg-slate-800/80 text-emerald-400 border border-slate-700/80"&gt;
-            {project.category}
+            {project.category} {/* 11. Imprime la categoría dinámicamente */}
           &lt;/span&gt;
 
-          {/* Botones rápidos de GitHub */}
+          {/* 12. Renderizado condicional: si existe githubUrl, muestra el enlace seguro */}
           &lt;div className="flex items-center gap-2"&gt;
             {project.githubUrl && (
               &lt;a
                 href={project.githubUrl}
-                target="_blank"
-                rel="noreferrer"
+                target="_blank"        // 13. Abre en pestaña nueva
+                rel="noreferrer"       // 14. MEDIDA DE SEGURIDAD: Evita vulnerabilidad Tabnabbing
                 className="p-1.5 rounded-lg bg-slate-950/80 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 hover:bg-slate-900 transition-colors"
                 title="Ver código en GitHub"
               &gt;
@@ -663,21 +1074,22 @@ export function ProjectCard({ project }: ProjectCardProps) {
           &lt;/div&gt;
         &lt;/div&gt;
 
-        {/* Título */}
+        {/* 15. Título del proyecto con efecto de color al hacer hover sobre la tarjeta */}
         &lt;h3 className="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors"&gt;
           {project.title}
         &lt;/h3&gt;
 
-        {/* Descripción corta */}
+        {/* 16. Descripción textual del proyecto */}
         &lt;p className="text-xs text-slate-400 leading-relaxed"&gt;
           {project.description}
         &lt;/p&gt;
 
-        {/* Botón interactivo */}
+        {/* 17. Botón interactivo para conmutar los detalles técnicos */}
         &lt;button
-          onClick={toggleDetails}
+          onClick={toggleDetails} // 18. Al hacer clic ejecuta la función que cambia el estado
           className="flex items-center gap-1.5 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors pt-2 cursor-pointer"
         &gt;
+          {/* 19. Operador ternario: cambia el texto y el icono según el estado */}
           {showDetails ? "Ocultar detalles técnicos" : "Ver detalles técnicos"}
           {showDetails ? (
             &lt;ChevronUp className="w-3.5 h-3.5" /&gt;
@@ -686,20 +1098,21 @@ export function ProjectCard({ project }: ProjectCardProps) {
           )}
         &lt;/button&gt;
 
-        {/* Renderizado condicional de detalles */}
+        {/* 20. Renderizado condicional con cortocircuito lógico (&&): solo se pinta si showDetails es true */}
         {showDetails && (
           &lt;div className="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 space-y-1.5 animate-fadeIn"&gt;
             &lt;p className="text-[11px] font-semibold text-slate-300"&gt;
               Puntos Clave de Arquitectura:
             &lt;/p&gt;
             &lt;ul className="space-y-1"&gt;
+              {/* 21. Itera sobre los hitos con .map() asignando la key única por índice */}
               {project.highlights.map((highlight, idx) => (
                 &lt;li
                   key={idx}
                   className="text-xs text-slate-400 flex items-center gap-1.5"
                 &gt;
-                  &lt;span className="w-1.5 h-1.5 rounded-full bg-emerald-400/80 shrink-0" /&gt;
-                  &lt;span&gt;{highlight}&lt;/span&gt;
+                  &lt;span className="w-1.5 h-1.5 rounded-full bg-emerald-400" /&gt;
+                  {highlight}
                 &lt;/li&gt;
               ))}
             &lt;/ul&gt;
@@ -707,378 +1120,318 @@ export function ProjectCard({ project }: ProjectCardProps) {
         )}
       &lt;/div&gt;
 
-      {/* Etiquetas tecnológicas */}
-      &lt;div className="pt-6 border-t border-slate-800/80 mt-6"&gt;
-        &lt;div className="flex flex-wrap gap-1.5"&gt;
-          {project.tags.map((tag, idx) => (
-            &lt;span
-              key={idx}
-              className="px-2 py-0.5 rounded bg-slate-950 text-[11px] font-mono text-slate-400 border border-slate-800/60"
-            &gt;
-              {tag}
-            &lt;/span&gt;
-          ))}
-        &lt;/div&gt;
+      {/* 22. Pie de la tarjeta: tags tecnológicas */}
+      &lt;div className="flex flex-wrap gap-1.5 pt-4 border-t border-slate-800/60 mt-4"&gt;
+        {project.tags.map((tag) => (
+          &lt;span
+            key={tag}
+            className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-950 text-slate-400 border border-slate-800"
+          &gt;
+            {tag}
+          &lt;/span&gt;
+        ))}
       &lt;/div&gt;
     &lt;/div&gt;
   );
 }</code></pre>
     </div>
-
-    <h3>Desglose Línea por Línea de Todo el Componente:</h3>
-    <div class="line-breakdown">
-      <div class="line-item">
-        <span class="line-num">Línea 1</span>
-        <span class="line-code">import { useState } from "react";</span>
-        <p class="line-desc">Importamos el <strong>Hook de estado</strong> básico de React. Permite que el componente recuerde información entre renderizados.</p>
-      </div>
-
-      <div class="line-item">
-        <span class="line-num">Línea 2</span>
-        <span class="line-code">import type { Project } from "../data/portfolioData";</span>
-        <p class="line-desc">Importamos la interfaz <code>Project</code>. El prefijo <code>type</code> le dice al compilador: <em>"Esto es solo un contrato de tipos para el editor, al compilar a JS descártalo para que no pese nada"</em>.</p>
-      </div>
-
-      <div class="line-item">
-        <span class="line-num">Línea 3</span>
-        <span class="line-code">import { ChevronDown, ChevronUp } from "lucide-react";</span>
-        <p class="line-desc">Importamos los iconos de flecha hacia arriba y abajo desde la librería oficial de iconos vectoriales.</p>
-      </div>
-
-      <div class="line-item">
-        <span class="line-num">Líneas 5-7</span>
-        <span class="line-code">interface ProjectCardProps { project: Project; }</span>
-        <p class="line-desc"><strong>El contrato de Props:</strong> En Java declaras <code>public void dibujar(Project p)</code>. En React declaras esta interfaz para exigir que quien use <code>&lt;ProjectCard /&gt;</code> le pase obligatoriamente un objeto de tipo <code>Project</code>.</p>
-      </div>
-
-      <div class="line-item">
-        <span class="line-num">Línea 9</span>
-        <span class="line-code">export function ProjectCard({ project }: ProjectCardProps)</span>
-        <p class="line-desc">Definición de la función componente. La sintaxis <code>{ project }</code> se llama <em>destructuring</em> (desestructuración): saca la propiedad <code>project</code> del objeto de props recibido directamente.</p>
-      </div>
-
-      <div class="line-item">
-        <span class="line-num">Línea 10</span>
-        <span class="line-code">const [showDetails, setShowDetails] = useState&lt;boolean&gt;(false);</span>
-        <p class="line-desc">
-          <code>showDetails</code> es el valor actual (empieza en <code>false</code>, oculto).<br>
-          <code>setShowDetails</code> es la función que React te da para modificar ese valor. Al llamarla, React redibuja la tarjeta en pantalla de forma automática.
-        </p>
-      </div>
-
-      <div class="line-item">
-        <span class="line-num">Líneas 12-14</span>
-        <span class="line-code">const toggleDetails = () =&gt; { setShowDetails(!showDetails); };</span>
-        <p class="line-desc">Función manejadora del clic (event handler). Invierte el booleano: si era falso pasa a verdadero, y si era verdadero pasa a falso.</p>
-      </div>
-
-      <div class="line-item">
-        <span class="line-num">Línea 17</span>
-        <span class="line-code">&lt;div className="flex flex-col justify-between p-6 rounded-2xl bg-slate-900/40 border border-slate-800 hover:border-slate-700 transition-all hover:-translate-y-1 group"&gt;</span>
-        <p class="line-desc">
-          <strong>Clases de Tailwind explicadas:</strong><br>
-          &bull; <code>flex flex-col justify-between</code>: Coloca los hijos en columna vertical y empuja el pie de tarjeta hacia el fondo.<br>
-          &bull; <code>p-6 rounded-2xl</code>: Padding interno de 24px y bordes muy redondeados.<br>
-          &bull; <code>bg-slate-900/40</code>: Fondo azul oscuro translúcido (40% de opacidad).<br>
-          &bull; <code>hover:-translate-y-1</code>: Efecto flotante al pasar el ratón (sube 4 píxeles).<br>
-          &bull; <code>group</code>: Permite que los elementos interiores reaccionen cuando pasas el ratón por cualquier parte de la tarjeta.
-        </p>
-      </div>
-
-      <div class="line-item">
-        <span class="line-num">Líneas 37-47</span>
-        <span class="line-code">&lt;button onClick={toggleDetails}&gt; ... &lt;/button&gt;</span>
-        <p class="line-desc">
-          Al hacer clic ejecuta <code>toggleDetails</code>.<br>
-          Usa un <strong>operador ternario</strong> (<code>showDetails ? ... : ...</code>) para alternar el texto del botón y cambiar el icono entre <code>ChevronUp</code> y <code>ChevronDown</code>.
-        </p>
-      </div>
-
-      <div class="line-item">
-        <span class="line-num">Líneas 50-67</span>
-        <span class="line-code">{showDetails &amp;&amp; ( &lt;div ...&gt; ... &lt;/div&gt; )}</span>
-        <p class="line-desc">
-          <strong>Renderizado Condicional de Cortocircuito:</strong> En JavaScript, <code>true &amp;&amp; elemento</code> devuelve el elemento; <code>false &amp;&amp; elemento</code> no pinta nada. Es el equivalente exacto a un bloque <code>if</code> en Java para mostrar u ocultar la caja de arquitectura.
-        </p>
-      </div>
-
-      <div class="line-item">
-        <span class="line-num">Líneas 70-81</span>
-        <span class="line-code">{project.tags.map((tag, idx) =&gt; ( &lt;span key={idx}&gt;{tag}&lt;/span&gt; ))}</span>
-        <p class="line-desc">
-          Recorre la lista de tecnologías (Java, SQL, Git...) y genera una pequeña píldora visual por cada una. El atributo <code>key={idx}</code> es obligatorio en React para optimizar el Virtual DOM.
-        </p>
-      </div>
-    </div>
   </section>
 
   <!-- ========================================== -->
-  <!-- PASO 5: ERRORES Y DEPURACIÓN -->
+  <!-- PASO 5: APP.TSX ORQUESTADOR -->
   <!-- ========================================== -->
   <section class="section-card" id="paso5">
     <div class="step-header">
       <div class="step-number">5</div>
       <div>
-        <div class="step-title">Depuración y Errores Reales: Casos Prácticos</div>
-        <div class="step-subtitle">Lo que aprendimos resolviendo los problemas de hoy</div>
+        <div class="step-title">App.tsx: El Orquestador Principal</div>
+        <div class="step-subtitle">Archivo: <code>src/App.tsx</code></div>
       </div>
     </div>
 
-    <p>Durante la sesión encontramos 4 situaciones técnicas habituales en el desarrollo profesional:</p>
-
-    <details open>
-      <summary>1. Error: verbatimModuleSyntax y 'import type'</summary>
-      <div class="details-body">
-        <p><strong>El error:</strong> <code>TS1484: 'Project' is a type and must be imported using a type-only import</code>.</p>
-        <p><strong>Por qué ocurre:</strong> Vite y TypeScript moderno tienen activada la regla <code>verbatimModuleSyntax</code>. Si importas una interfaz como si fuera un objeto de Javascript ordinario (<code>import { Project }</code>), el empaquetador no sabe si tiene código que ejecutar o no. Solución: usar siempre <code>import type { Project }</code> para contratos e interfaces.</p>
+    <!-- CONEXIÓN VISUAL -->
+    <div class="step-connection">
+      <div class="connection-header">🔗 Conexión de este paso en el proyecto:</div>
+      <div class="connection-flow">
+        <div class="conn-box conn-prev">
+          <span class="conn-label">Origen</span>
+          <span class="conn-text">Importa los datos de <code>portfolioData.ts</code> y los componentes <code>ProjectCard</code> e <code>InteractiveTerminal</code>.</span>
+        </div>
+        <div class="conn-arrow">➔</div>
+        <div class="conn-box conn-current">
+          <span class="conn-label">Este paso procesa</span>
+          <span class="conn-text">Estructura las secciones Hero, Diferencial de Ciberseguridad, Proyectos, Formación y Contacto.</span>
+        </div>
+        <div class="conn-arrow">➔</div>
+        <div class="conn-box conn-next">
+          <span class="conn-label">Destino</span>
+          <span class="conn-text">Se exporta por defecto (<code>export default App</code>) para que <code>main.tsx</code> lo monte en el navegador.</span>
+        </div>
       </div>
-    </details>
+    </div>
 
-    <details>
-      <summary>2. Error: Case Sensitivity en librerías (ChevronUP vs ChevronUp)</summary>
-      <div class="details-body">
-        <p><strong>El error:</strong> <code>TS2724: '"lucide-react"' has no exported member named 'ChevronUP'. Did you mean 'ChevronUp'?</code></p>
-        <p><strong>Por qué ocurre:</strong> En TypeScript y JavaScript los nombres son estrictos con mayúsculas y minúsculas (<em>case-sensitive</em>). La librería exporta <code>ChevronUp</code> (con 'p' minúscula). Al poner la 'P' mayúscula, el import devolvía <code>undefined</code>.</p>
+    <h3>Código Comentado de la Integración en <code>src/App.tsx</code></h3>
+    <div class="code-container">
+      <div class="code-header">
+        <span>src/App.tsx</span>
+        <span>Fragmento Clave</span>
       </div>
-    </details>
+      <pre><code>// 1. Importa el hook useState para el feedback de copiado de email
+import { useState } from "react";
+// 2. Importa la fuente centralizada de datos y el tipo Project
+import { personalData, type Project } from "./data/portfolioData";
+// 3. Importa los componentes hijos reutilizables
+import { ProjectCard } from "./components/ProjectCard";
+import { InteractiveTerminal } from "./components/InteractiveTerminal";
 
-    <details>
-      <summary>3. Error: ProyectCardProps vs ProjectCardProps (Typo en el contrato)</summary>
-      <div class="details-body">
-        <p><strong>El error:</strong> <code>TS2552: Cannot find name 'ProjectCardProps'. Did you mean 'ProyectCardProps'?</code></p>
-        <p><strong>Por qué ocurre:</strong> En español escribimos "Proyecto" con 'y', pero en código estándar en inglés usamos "Project" con 'j'. Al definir <code>interface Proyect...</code> pero tipar <code>({ project }: ProjectCardProps)</code> con 'j', TypeScript avisaba de que eran nombres distintos.</p>
-      </div>
-    </details>
+export default function App() {
+  // 4. Estado booleano para feedback al copiar el email
+  const [copiedEmail, setCopiedEmail] = useState&lt;boolean&gt;(false);
 
-    <details>
-      <summary>4. Entorno: Restricted Mode y Format on Save en VS Code</summary>
-      <div class="details-body">
-        <p><strong>La situación:</strong> Al abrir VS Code en Linux, aparecía la barra azul de <em>Restricted Mode</em> y al buscar <code>format on save</code> ponía <em>"No matching results"</em>.</p>
-        <p><strong>La solución:</strong></p>
-        <ul>
-          <li>El buscador <kbd>Ctrl + P</kbd> busca <em>archivos</em> del proyecto. Para abrir la <strong>Configuración</strong> de VS Code hay que pulsar <kbd>Ctrl + ,</kbd> (Control + Coma).</li>
-          <li>En <em>Restricted Mode</em>, VS Code desactiva extensiones y formateadores por seguridad. Al pulsar <strong>"Trust folder"</strong> se desbloquean todas las herramientas de desarrollo.</li>
-        </ul>
-      </div>
-    </details>
+  return (
+    &lt;div className="min-h-screen bg-slate-950 text-slate-100"&gt;
+      {/* 5. SECCIÓN HERO: Presentación y Terminal Interactiva */}
+      &lt;section id="sobre-mi" className="space-y-6"&gt;
+        &lt;h1 className="text-4xl font-extrabold text-white"&gt;{personalData.name}&lt;/h1&gt;
+        
+        {/* 6. Inserción de la Terminal interactiva CachyOS / Linux en la cabecera */}
+        &lt;InteractiveTerminal /&gt;
+      &lt;/section&gt;
 
-    <details>
-      <summary>5. Error de Sintaxis: Código huérfano tras refactorizar (Todo en rojo)</summary>
-      <div class="details-body">
-        <p><strong>El problema:</strong> Al pegar el nuevo <code>&lt;ProjectCard /&gt;</code>, el código antiguo de 45 líneas se quedó por debajo sin borrar.</p>
-        <p><strong>Por qué se marca todo en rojo:</strong> El código antiguo contenía variables como <code>project.category</code> y etiquetas <code>&lt;/div&gt;</code> fuera del bucle <code>.map()</code>. Al no tener el contexto ni las etiquetas de apertura, el compilador JSX de TypeScript rompe el árbol de elementos visuales. La solución fue limpiar ese bloque sobrante.</p>
-      </div>
-    </details>
+      {/* 7. SECCIÓN PROYECTOS: Renderizado con .map() y Props */}
+      &lt;section id="proyectos" className="grid md:grid-cols-2 gap-6"&gt;
+        {personalData.projects.map((project: Project) => (
+          // 8. Pasamos cada objeto 'project' mediante props con su key identificativa
+          &lt;ProjectCard key={project.id} project={project} /&gt;
+        ))}
+      &lt;/section&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+    </div>
   </section>
 
   <!-- ========================================== -->
-  <!-- PASO 6: CONEXIÓN FINAL EN APP.TSX -->
+  <!-- PASO 6: PROPS Y RECONCILIACIÓN EN REACT -->
   <!-- ========================================== -->
   <section class="section-card" id="paso6">
     <div class="step-header">
       <div class="step-number">6</div>
       <div>
-        <div class="step-title">La Conexión Final: De 45 líneas a 1 sola línea</div>
-        <div class="step-subtitle">Reemplazo dentro de <code>src/App.tsx</code></div>
+        <div class="step-title">Comunicación Padre-Hijo (Props) y el atributo <code>key</code></div>
+        <div class="step-subtitle">Arquitectura de Flujo Unidireccional en React</div>
+      </div>
+    </div>
+
+    <!-- CONEXIÓN VISUAL -->
+    <div class="step-connection">
+      <div class="connection-header">🔗 Conexión de este paso en el proyecto:</div>
+      <div class="connection-flow">
+        <div class="conn-box conn-prev">
+          <span class="conn-label">Origen</span>
+          <span class="conn-text">Array de proyectos <code>personalData.projects</code> en <code>App.tsx</code>.</span>
+        </div>
+        <div class="conn-arrow">➔</div>
+        <div class="conn-box conn-current">
+          <span class="conn-label">Este paso procesa</span>
+          <span class="conn-text">Transforma cada elemento en un componente <code>&lt;ProjectCard project={p} key={p.id} /&gt;</code> mediante <code>.map()</code>.</span>
+        </div>
+        <div class="conn-arrow">➔</div>
+        <div class="conn-box conn-next">
+          <span class="conn-label">Destino</span>
+          <span class="conn-text">El algoritmo de reconciliación de React actualiza solo las tarjetas modificadas sin repintar toda la página.</span>
+        </div>
       </div>
     </div>
 
     <p>
-      Observa la comparativa de cómo queda el código antes y después de usar tu componente:
-    </p>
-
-    <div class="analogy-box analogy-react">
-      <div class="analogy-header">❌ ANTES (Código repetido y acoplado en App.tsx):</div>
-      <pre><code>{filteredProjects.map((project: Project) => (
-  &lt;div key={project.id} className="flex flex-col justify-between p-6 rounded-2xl bg-slate-900/40 border border-slate-800 hover:border-slate-700..."&gt;
-    &lt;div className="space-y-4"&gt;
-      &lt;span&gt;{project.category}&lt;/span&gt;
-      &lt;h3&gt;{project.title}&lt;/h3&gt;
-      &lt;p&gt;{project.description}&lt;/p&gt;
-      {/* 40 líneas más de tarjetas, etiquetas y bucles anidados... */}
-    &lt;/div&gt;
-  &lt;/div&gt;
-))}</code></pre>
-    </div>
-
-    <div class="analogy-box analogy-java">
-      <div class="analogy-header">✅ AHORA (Arquitectura Limpia con Componentes):</div>
-      <pre><code>// 1. Importas tu componente arriba:
-import { ProjectCard } from './components/ProjectCard'
-
-// 2. En la cuadrícula de proyectos lo usas en una sola línea elegante:
-&lt;div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"&gt;
-  {filteredProjects.map((project: Project) => (
-    &lt;ProjectCard key={project.id} project={project} /&gt;
-  ))}
-&lt;/div&gt;</code></pre>
-    </div>
-
-    <div class="callout callout-success">
-      🎉 <strong>Resultado:</strong> <code>App.tsx</code> reduce su tamaño, se lee como un libro en inglés limpio y cada tarjeta se gestiona a sí misma con su propio estado interactivo.
-    </div>
-  </section>
-
-  <!-- ========================================== -->
-  <!-- PASO 7: ENLACES EXTERNOS Y SEGURIDAD -->
-  <!-- ========================================== -->
-  <section class="section-card" id="paso7">
-    <div class="step-header">
-      <div class="step-number">7</div>
-      <div>
-        <div class="step-title">Ampliación de ProjectCard: Enlaces Externos y Ciberseguridad</div>
-        <div class="step-subtitle">Botones condicionales de GitHub y Demo con <code>target="_blank"</code></div>
-      </div>
-    </div>
-
-    <p>
-      Hicimos que cada tarjeta pueda enlazar directamente al repositorio en GitHub o a una demo interactiva del proyecto si los datos existen en <code>portfolioData.ts</code>.
-    </p>
-
-    <div class="analogy-box analogy-security">
-      <div class="analogy-header">🛡️ Clave de Ciberseguridad: Prevención de Tabnabbing</div>
-      <p>
-        Al abrir enlaces externos con <code>target="_blank"</code>, siempre debemos añadir <code>rel="noreferrer"</code>. Esto evita que la página de destino pueda acceder a <code>window.opener</code> y redirigir nuestra web maliciosamente en segundo plano.
-      </p>
-    </div>
-
-    <div class="line-breakdown">
-      <div class="line-item">
-        <span class="line-num">Icono SVG</span>
-        <span class="line-code">function GithubIcon({ className }: { className?: string })</span>
-        <p class="line-desc">Creamos un componente vectorial SVG ligero y optimizado sin dependencias externas pesadas.</p>
-      </div>
-      <div class="line-item">
-        <span class="line-num">Render Condicional</span>
-        <span class="line-code">{project.githubUrl &amp;&amp; ( &lt;a href={project.githubUrl} ...&gt; ... &lt;/a&gt; )}</span>
-        <p class="line-desc">Si el proyecto no tiene enlace a GitHub, el botón simplemente no se pinta, manteniendo la tarjeta limpia.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================== -->
-  <!-- PASO 8: COPIAR CORREO CON FEEDBACK TEMPORAL -->
-  <!-- ========================================== -->
-  <section class="section-card" id="paso8">
-    <div class="step-header">
-      <div class="step-number">8</div>
-      <div>
-        <div class="step-title">Feedback Visual y Asincronía: Botón Copiar Correo</div>
-        <div class="step-subtitle">Uso de <code>navigator.clipboard</code> y <code>setTimeout</code></div>
-      </div>
-    </div>
-
-    <p>
-      Implementamos un botón en la sección de contacto que copia el email real al portapapeles del sistema operativo y ofrece retroalimentación visual inmediata.
+      En React, los datos siempre viajan en una sola dirección: <strong>de padres a hijos</strong> (flujo unidireccional). Las <code>props</code> son parámetros inmutables que un componente recibe para renderizarse.
     </p>
 
     <div class="analogy-box analogy-java">
       <div class="analogy-header">☕ Equivalencia con Java / DAM</div>
       <p>
-        En Java Desktop accederías al <code>Toolkit.getDefaultToolkit().getSystemClipboard()</code> y necesitarías un <code>Timer</code> o un hilo <code>Thread.sleep()</code> para resetear la interfaz. En React usamos las APIs asíncronas del navegador junto con el Hook <code>useState</code>.
+        Pasar una prop es idéntico a llamar a un constructor o método pasándole un parámetro por valor: <code>new TarjetaProyecto(proyecto)</code>. El componente hijo no puede modificar el objeto original del padre; solo puede leerlo.
       </p>
     </div>
+  </section>
 
+  <!-- ========================================== -->
+  <!-- PASO 7: ICONOS DINÁMICOS Y SVG SEGURO -->
+  <!-- ========================================== -->
+  <section class="section-card" id="paso7">
+    <div class="step-header">
+      <div class="step-number">7</div>
+      <div>
+        <div class="step-title">Iconografía y Gráficos Vectoriales (Lucide React & SVG)</div>
+        <div class="step-subtitle">Visualización Segura sin Librerías Pesadas</div>
+      </div>
+    </div>
+
+    <!-- CONEXIÓN VISUAL -->
+    <div class="step-connection">
+      <div class="connection-header">🔗 Conexión de este paso en el proyecto:</div>
+      <div class="connection-flow">
+        <div class="conn-box conn-prev">
+          <span class="conn-label">Origen</span>
+          <span class="conn-text">Iconos de Lucide (<code>Shield</code>, <code>Terminal</code>, <code>Lock</code>) y componente vectorial <code>GithubIcon</code>.</span>
+        </div>
+        <div class="conn-arrow">➔</div>
+        <div class="conn-box conn-current">
+          <span class="conn-label">Este paso procesa</span>
+          <span class="conn-text">Renderizado SVG puro con clases de Tailwind como <code>text-emerald-400</code> y <code>w-4 h-4</code>.</span>
+        </div>
+        <div class="conn-arrow">➔</div>
+        <div class="conn-box conn-next">
+          <span class="conn-label">Destino</span>
+          <span class="conn-text">Iconos nítidos en pantallas Retina y móviles sin descargar fuentes tipográficas pesadas.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- PASO 8: PORTAPAPELES Y ESTADO REACTIVO -->
+  <!-- ========================================== -->
+  <section class="section-card" id="paso8">
+    <div class="step-header">
+      <div class="step-number">8</div>
+      <div>
+        <div class="step-title">Feedback al Usuario: Copiar Email al Portapapeles</div>
+        <div class="step-subtitle">Async/Await, <code>navigator.clipboard</code> y Temporizadores</div>
+      </div>
+    </div>
+
+    <!-- CONEXIÓN VISUAL -->
+    <div class="step-connection">
+      <div class="connection-header">🔗 Conexión de este paso en el proyecto:</div>
+      <div class="connection-flow">
+        <div class="conn-box conn-prev">
+          <span class="conn-label">Origen</span>
+          <span class="conn-text">Evento de usuario <code>onClick</code> en el botón "Copiar Correo".</span>
+        </div>
+        <div class="conn-arrow">➔</div>
+        <div class="conn-box conn-current">
+          <span class="conn-label">Este paso procesa</span>
+          <span class="conn-text">Escribe en el portapapeles con la API nativa y cambia <code>copiedEmail</code> a <code>true</code>.</span>
+        </div>
+        <div class="conn-arrow">➔</div>
+        <div class="conn-box conn-next">
+          <span class="conn-label">Destino</span>
+          <span class="conn-text">Tras 2000 ms, un <code>setTimeout</code> restaura el botón a su estado original gris.</span>
+        </div>
+      </div>
+    </div>
+
+    <h3>Código Comentado Línea por Línea</h3>
     <div class="code-container">
       <div class="code-header">
         <span>src/App.tsx</span>
         <span>Lógica del Portapapeles</span>
       </div>
-      <pre><code>const [copiedEmail, setCopiedEmail] = useState&lt;boolean&gt;(false);
+      <pre><code>// 1. Estado reactivo: true indica que el texto está copiado en el portapapeles
+const [copiedEmail, setCopiedEmail] = useState&lt;boolean&gt;(false);
 
-const handleCopyEmail = () => {
-  navigator.clipboard.writeText(personalData.links.email);
-  setCopiedEmail(true); // Cambia el estado a copiado (botón verde con check)
-  setTimeout(() => {
-    setCopiedEmail(false); // Tras 2000 ms (2 segundos), vuelve al estado normal
-  }, 2000);
+// 2. Función asíncrona que responde al evento de clic
+const handleCopyEmail = async () => {
+  try {
+    // 3. Escribe el email en el portapapeles del sistema usando la API segura del navegador
+    await navigator.clipboard.writeText(personalData.links.email);
+    // 4. Actualiza el estado reactivo: el botón se vuelve verde con un icono de Check
+    setCopiedEmail(true);
+    // 5. Restaura el estado a false pasados 2 segundos (2000 ms) para que el botón vuelva a su icono normal
+    setTimeout(() => setCopiedEmail(false), 2000);
+  } catch (err) {
+    // 6. Control de excepciones por si el navegador deniega permisos de portapapeles
+    console.error("Error al copiar al portapapeles:", err);
+  }
 };</code></pre>
-    </div>
-
-    <div class="line-breakdown">
-      <div class="line-item">
-        <span class="line-num">1. API Clipboard</span>
-        <span class="line-code">navigator.clipboard.writeText(...)</span>
-        <p class="line-desc">Función asíncrona estándar de los navegadores modernos para escribir texto en el portapapeles del usuario con seguridad.</p>
-      </div>
-      <div class="line-item">
-        <span class="line-num">2. Temporizador</span>
-        <span class="line-code">setTimeout(() =&gt; { setCopiedEmail(false); }, 2000);</span>
-        <p class="line-desc">Programa la ejecución del reseteo para que la confirmación visual dure exactamente 2 segundos en pantalla.</p>
-      </div>
-      <div class="line-item">
-        <span class="line-num">3. Clases Dinámicas</span>
-        <span class="line-code">copiedEmail ? 'bg-emerald-500/20 border-emerald-500...' : 'bg-slate-900...'</span>
-        <p class="line-desc">En Tailwind usamos plantillas literales con operador ternario para cambiar el estilo visual según el valor de <code>copiedEmail</code>.</p>
-      </div>
     </div>
   </section>
 
   <!-- ========================================== -->
-  <!-- PASO 9: EL FLUJO MENTAL DE GIT -->
+  <!-- PASO 9: GIT & CI/CD -->
   <!-- ========================================== -->
   <section class="section-card" id="paso9">
     <div class="step-header">
       <div class="step-number">9</div>
       <div>
-        <div class="step-title">El Flujo Mental de Git: Del Escritorio al Álbum</div>
-        <div class="step-subtitle">Working Directory, Staging Area, Commits y Navegación</div>
+        <div class="step-title">Control de Versiones y Despliegue Automatizado (CI/CD)</div>
+        <div class="step-subtitle">Git, GitHub Actions y GitHub Pages</div>
       </div>
     </div>
 
-    <p>
-      Comprender Git es indispensable en DAM. No se trata de memorizar comandos, sino de entender las 3 zonas de trabajo:
-    </p>
-
-    <div class="analogy-box analogy-java">
-      <div class="analogy-header">📸 La Analogía de la Foto Oficial</div>
-      <ul>
-        <li><strong>1. Working Directory (Tu Escritorio):</strong> Los archivos que editas en VS Code. <code>git status</code> los muestra en <strong>rojo</strong>.</li>
-        <li><strong>2. Staging Area (El Escenario):</strong> Con <code>git add .</code> subes los cambios al escenario para prepararlos. <code>git status</code> los muestra en <strong>verde</strong>.</li>
-        <li><strong>3. Repositorio Local (La Foto / Commit):</strong> Con <code>git commit -m "..."</code> disparas la cámara y la foto queda guardada en el historial permanente (consultable con <code>git log</code>).</li>
-      </ul>
+    <!-- CONEXIÓN VISUAL -->
+    <div class="step-connection">
+      <div class="connection-header">🔗 Conexión de este paso en el proyecto:</div>
+      <div class="connection-flow">
+        <div class="conn-box conn-prev">
+          <span class="conn-label">Origen</span>
+          <span class="conn-text">Tus commits locales en la rama <code>master</code>.</span>
+        </div>
+        <div class="conn-arrow">➔</div>
+        <div class="conn-box conn-current">
+          <span class="conn-label">Este paso procesa</span>
+          <span class="conn-text">Envía el código con <code>git push origin master</code> al repositorio en GitHub.</span>
+        </div>
+        <div class="conn-arrow">➔</div>
+        <div class="conn-box conn-next">
+          <span class="conn-label">Destino</span>
+          <span class="conn-text">GitHub Actions compila el bundle y lo publica gratis en <code>alexisllorca.github.io/portfolio</code>.</span>
+        </div>
+      </div>
     </div>
 
-    <details open>
-      <summary>⚠️ Error Típico: "fatal: no es un repositorio git"</summary>
-      <div class="details-body">
-        <p><strong>Por qué ocurre:</strong> Ejecutas comandos de Git estando en tu carpeta personal (<code>~</code>) en lugar de estar dentro de la carpeta del proyecto.</p>
-        <p><strong>Solución:</strong> Navegar con <code>cd ~/Repositorio-Git/portfolio</code> antes de lanzar comandos Git, o usar la terminal integrada de VS Code que se abre directamente en la raíz del proyecto.</p>
+    <h3>Comandos Git Esenciales Comentados</h3>
+    <div class="code-container">
+      <div class="code-header">
+        <span>Terminal Bash / Fish</span>
+        <span>Comandos Git</span>
       </div>
-    </details>
+      <pre><code># 1. Comprueba el estado del árbol de trabajo (archivos modificados o sin rastrear)
+git status
+
+# 2. Añade todos los archivos modificados al área de preparación (staging area)
+git add .
+
+# 3. Guarda una instantánea permanente en el historial local con un mensaje descriptivo
+git commit -m "feat: add interactive terminal with secure input and isolated scroll"
+
+# 4. Sube la rama local 'master' al servidor remoto 'origin' en GitHub
+git push origin master</code></pre>
+    </div>
   </section>
 
   <!-- ========================================== -->
-  <!-- PASO 10: FORMACIÓN & TRAYECTORIA ACADÉMICA -->
+  <!-- PASO 10: FORMACIÓN DUAL -->
   <!-- ========================================== -->
   <section class="section-card" id="paso10">
     <div class="step-header">
       <div class="step-number">10</div>
       <div>
-        <div class="step-title">Formación Académica y Especialización Dual</div>
-        <div class="step-subtitle">Tipado Fuerte de Educación y Mapeo Dinámico en <code>App.tsx</code></div>
+        <div class="step-title">Sección de Formación: Ciberseguridad y 2º de DAM</div>
+        <div class="step-subtitle">Modelado de Trayectoria Académica en TypeScript</div>
       </div>
     </div>
 
-    <p>
-      Para transmitir un perfil profesional atractivo para empresas y prácticas de DAM, creamos la sección de Formación destacando el <strong>Máster en Ciberseguridad</strong> y el <strong>2º curso de DAM con Aplicaciones Móviles</strong>.
-    </p>
-
-    <div class="line-breakdown">
-      <div class="line-item">
-        <span class="line-num">1. Interfaz TypeScript</span>
-        <span class="line-code">export interface EducationItem { degree, institution, period, description, highlights }</span>
-        <p class="line-desc">Garantiza que cualquier título añadido en el futuro contenga obligatoriamente todos los datos requeridos por la vista.</p>
-      </div>
-      <div class="line-item">
-        <span class="line-num">2. Mapeo en Cuadrícula</span>
-        <span class="line-code">{personalData.education.map((item, idx) =&gt; ( &lt;div ...&gt; ... &lt;/div&gt; ))}</span>
-        <p class="line-desc">Genera una cuadrícula responsiva (<code>grid md:grid-cols-2</code>) con badges de estado (<em>Completado</em> / <em>En curso</em>) y puntos clave de materias como Android/PMDM y Java.</p>
-      </div>
-      <div class="line-item">
-        <span class="line-num">3. Enlace Navbar</span>
-        <span class="line-code">&lt;a href="#formacion"&gt;Formación&lt;/a&gt;</span>
-        <p class="line-desc">Integrado en la cabecera fija para navegación con salto suave hacia la sección.</p>
+    <!-- CONEXIÓN VISUAL -->
+    <div class="step-connection">
+      <div class="connection-header">🔗 Conexión de este paso en el proyecto:</div>
+      <div class="connection-flow">
+        <div class="conn-box conn-prev">
+          <span class="conn-label">Origen</span>
+          <span class="conn-text">Array <code>education</code> en <code>portfolioData.ts</code>.</span>
+        </div>
+        <div class="conn-arrow">➔</div>
+        <div class="conn-box conn-current">
+          <span class="conn-label">Este paso procesa</span>
+          <span class="conn-text">Cuadrícula responsive de 2 columnas (<code>grid md:grid-cols-2</code>) en <code>App.tsx</code>.</span>
+        </div>
+        <div class="conn-arrow">➔</div>
+        <div class="conn-box conn-next">
+          <span class="conn-label">Destino</span>
+          <span class="conn-text">Acceso directo desde el enlace <code>#formacion</code> de la barra superior.</span>
+        </div>
       </div>
     </div>
   </section>
@@ -1095,40 +1448,142 @@ const handleCopyEmail = () => {
       </div>
     </div>
 
-    <p>
-      Creamos un componente autónomo (<code>src/components/InteractiveTerminal.tsx</code>) que simula una terminal Linux para que cualquier reclutador o visitante pueda interactuar con comandos como <code>whoami</code>, <code>skills</code>, <code>projects</code> o <code>sudo hire</code>.
-    </p>
+    <!-- CONEXIÓN VISUAL -->
+    <div class="step-connection">
+      <div class="connection-header">🔗 Conexión de este paso en el proyecto:</div>
+      <div class="connection-flow">
+        <div class="conn-box conn-prev">
+          <span class="conn-label">Origen</span>
+          <span class="conn-text">Entrada de texto del usuario o botones rápidos de comandos (<code>whoami</code>, <code>skills</code>, <code>sudo hire</code>).</span>
+        </div>
+        <div class="conn-arrow">➔</div>
+        <div class="conn-box conn-current">
+          <span class="conn-label">Este paso procesa</span>
+          <span class="conn-text">Valida el comando en un <code>switch</code> con <strong>Allowlist</strong> (inmune a inyección) y añade la respuesta al historial.</span>
+        </div>
+        <div class="conn-arrow">➔</div>
+        <div class="conn-box conn-next">
+          <span class="conn-label">Destino</span>
+          <span class="conn-text">Desplaza con <code>scrollTop</code> exclusivamente el interior de la terminal sin mover la ventana web.</span>
+        </div>
+      </div>
+    </div>
 
     <div class="analogy-box analogy-security">
       <div class="analogy-header">🛡️ Análisis de Seguridad (Security by Design)</div>
       <ul>
-        <li><strong>Inmunidad a Command Injection:</strong> No hay backend ni ejecución de procesos en el servidor. Opera como una máquina de estados determinista mediante un <code>switch</code> con <strong>Allowlisting estricto</strong>.</li>
-        <li><strong>Inmunidad a XSS:</strong> React escapa por defecto todos los valores de las cadenas renderizadas en el Virtual DOM (trato de texto plano tipo <code>textContent</code>, sin <code>dangerouslySetInnerHTML</code>).</li>
-        <li><strong>Sandbox del Navegador:</strong> Aislamiento total en el cliente sin acceso a ficheros locales ni variables de entorno sensibles.</li>
+        <li><strong>Inmunidad a Command Injection:</strong> No hay backend ni ejecución de subprocesos en la máquina. Opera como máquina de estados con <strong>Allowlisting estricto</strong>.</li>
+        <li><strong>Inmunidad a XSS:</strong> React escapa por defecto todos los valores de las cadenas renderizadas en el Virtual DOM (trato de texto plano, sin <code>dangerouslySetInnerHTML</code>).</li>
+        <li><strong>Scroll Aislado:</strong> Usamos <code>terminalBodyRef.current.scrollTop = terminalBodyRef.current.scrollHeight</code> para desplazar únicamente el interior de la consola, evitando los saltos bruscos de <code>scrollIntoView()</code>.</li>
       </ul>
     </div>
 
-    <div class="line-breakdown">
-      <div class="line-item">
-        <span class="line-num">1. Hook useRef</span>
-        <span class="line-code">const terminalBodyRef = useRef&lt;HTMLDivElement&gt;(null);</span>
-        <p class="line-desc">Permite referenciar el contenedor interno de la terminal y enfocar el cursor sin manipular el DOM de forma descontrolada.</p>
+    <h3>Código Comentado Línea por Línea: <code>src/components/InteractiveTerminal.tsx</code></h3>
+    <div class="code-container">
+      <div class="code-header">
+        <span>src/components/InteractiveTerminal.tsx</span>
+        <span>Código Clave Comentado</span>
       </div>
-      <div class="line-item">
-        <span class="line-num">2. Hook useEffect (Scroll Interno)</span>
-        <span class="line-code">terminalBodyRef.current.scrollTop = terminalBodyRef.current.scrollHeight;</span>
-        <p class="line-desc">Efecto reactivo que desplaza únicamente el interior de la ventana de la terminal al escribir, sin mover la página web principal.</p>
-      </div>
-      <div class="line-item">
-        <span class="line-num">3. Salidas con Iconos</span>
-        <span class="line-code">"👤 Nombre: Alexis...", "🎓 Titulación...", "🛡️ Filosofía: Security by Design"</span>
-        <p class="line-desc">Respuestas visuales y atractivas con emojis temáticos para todos los comandos del sistema.</p>
-      </div>
+      <pre><code>// 1. Importa los hooks necesarios: estado, referencias al DOM y sincronización reactiva
+import { useState, useRef, useEffect } from "react";
+// 2. Iconos vectoriales temáticos para la ventana
+import { Terminal, CornerDownLeft, Trash2 } from "lucide-react";
+
+// 3. Estructura que tipa cada línea almacenada en la terminal
+interface TerminalEntry {
+  command: string;           // Comando escrito por el usuario
+  output: string | string[]; // Respuesta (cadena simple o array de líneas)
+  isError?: boolean;         // Si es true, el texto se pinta en tono rojizo
+}
+
+export function InteractiveTerminal() {
+  // 4. Estado reactivo para el input de texto que escribe el usuario
+  const [input, setInput] = useState&lt;string&gt;("");
+  // 5. Historial de comandos ejecutados en la sesión
+  const [history, setHistory] = useState&lt;TerminalEntry[]&gt;([
+    {
+      command: "welcome",
+      output: [
+        "👋 ¡Bienvenido a la terminal interactiva de Alexis Llorca!",
+        "💡 Escribe 'help' o pulsa en los comandos rápidos para interactuar.",
+      ],
+    },
+  ]);
+
+  // 6. Referencias a elementos del DOM sin provocar re-renderizados innecesarios
+  const terminalBodyRef = useRef&lt;HTMLDivElement&gt;(null); // Caja con scroll de la terminal
+  const inputRef = useRef&lt;HTMLInputElement&gt;(null);       // Campo de texto del prompt
+
+  // 7. useEffect reactivo: cada vez que el historial cambia, hace scroll interno
+  useEffect(() => {
+    if (terminalBodyRef.current) {
+      // 8. CRUCIAL: Modifica solo el contenedor interno, sin mover la página del navegador
+      terminalBodyRef.current.scrollTop = terminalBodyRef.current.scrollHeight;
+    }
+  }, [history]); // Se ejecuta cuando cambia 'history'
+
+  // 9. Lógica de comandos seguros con ALLOWLIST (Inmunidad contra inyección de comandos)
+  const handleCommand = (cmdText: string) => {
+    const trimmed = cmdText.trim().toLowerCase();
+    if (!trimmed) return;
+
+    if (trimmed === "clear") {
+      setHistory([]);
+      setInput("");
+      return;
+    }
+
+    let output: string | string[] = "";
+    let isError = false;
+
+    // 10. Switch con allowlist cerrada: cualquier comando no listado va al caso por defecto
+    switch (trimmed) {
+      case "help":
+        output = [
+          "📋 Comandos disponibles:",
+          "  👤 whoami       - Información sobre mi perfil y titulación",
+          "  ⚡ skills       - Stack tecnológico y herramientas principales",
+          "  🚀 projects     - Resumen de mis proyectos destacados",
+          "  📬 contact      - Canales de contacto directo",
+          "  🔑 sudo hire    - Comando especial para ofertas y reclutadores",
+          "  🧹 clear        - Limpiar la pantalla de la terminal",
+        ];
+        break;
+      case "whoami":
+        output = [
+          "👤 Nombre: Alexis Emmanuel Llorca",
+          "🎓 Titulación: 2º de DAM | Máster en Ciberseguridad",
+          "🛡️ Filosofía: 'Security by Design' — software robusto desde el código.",
+        ];
+        break;
+      case "skills":
+        output = [
+          "💻 Lenguajes: Java, Kotlin, TypeScript, JavaScript, SQL, Python",
+          "🛡️ Ciberseguridad: OWASP Top 10, Hardening, Criptografía",
+          "🐧 Sistemas & DevOps: Linux, Docker, Git/GitHub, Bash",
+        ];
+        break;
+      case "sudo hire":
+        output = [
+          "🔐 [PRIVILEGIOS CONCEDIDOS]: root@alexis",
+          "✨ ¡Alexis está listo para incorporarse a proyectos y prácticas de DAM!",
+        ];
+        break;
+      default:
+        // 11. Manejo seguro de entradas desconocidas
+        output = `❌ Comando no encontrado: '${trimmed}'. Escribe 'help' para ver los comandos válidos.`;
+        isError = true;
+    }
+
+    // 12. Actualiza el historial de manera inmutable agregando la nueva entrada
+    setHistory((prev) => [...prev, { command: cmdText, output, isError }]);
+    setInput("");
+  };</code></pre>
     </div>
   </section>
 
   <!-- ========================================== -->
-  <!-- PASO 12: REPASO MÓVIL Y FLASHCARDS -->
+  <!-- PASO 12: AUTOEVALUACIÓN FLASHCARDS -->
   <!-- ========================================== -->
   <section class="section-card" id="quiz">
     <div class="step-header">
@@ -1165,7 +1620,7 @@ const handleCopyEmail = () => {
         <span>👆 Toca</span>
       </div>
       <div class="quiz-answer">
-        Es el equivalente a la clave primaria (PRIMARY KEY) en SQL. Permite al algoritmo de reconciliación de React rastrear exactamente qué tarjeta cambió, se añadió o se eliminó en el DOM sin tener que destruir y reconstruir todas las demás tarjetas de la página.
+        Es el equivalente a la clave primaria (PRIMARY KEY) en bases de datos relacionales. Permite al algoritmo de reconciliación de React rastrear exactamente qué tarjeta cambió o se eliminó en el DOM sin tener que destruir y reconstruir todas las demás tarjetas de la página.
       </div>
     </div>
 
@@ -1178,12 +1633,261 @@ const handleCopyEmail = () => {
         Porque con la regla <code>verbatimModuleSyntax</code>, TypeScript garantiza que los tipos e interfaces que solo existen en tiempo de diseño no dejen rastro de código ni pesen en el archivo JavaScript final que se descarga el usuario en su navegador.
       </div>
     </div>
+
+    <div class="quiz-card" onclick="this.classList.toggle('revealed')">
+      <div class="quiz-question">
+        <span>❓ 5. ¿Por qué usamos scrollTop en vez de scrollIntoView en la terminal?</span>
+        <span>👆 Toca</span>
+      </div>
+      <div class="quiz-answer">
+        <code>scrollIntoView()</code> desplaza toda la ventana del navegador provocando que la página web salte bruscamente hacia abajo. Asignar <code>terminalBodyRef.current.scrollTop = terminalBodyRef.current.scrollHeight</code> desplaza exclusivamente el interior de la caja de la terminal sin mover la página.
+      </div>
+    </div>
   </section>
+
+  <!-- ========================================== -->
+  <!-- WIDGET FLOTANTE: CHAT TUTOR DAM OFFLINE -->
+  <!-- ========================================== -->
+  <button class="tutor-fab" id="open-tutor-btn" onclick="toggleTutorModal()">
+    💬 Tutor Virtual DAM
+  </button>
+
+  <div class="tutor-modal" id="tutor-modal">
+    <div class="tutor-header">
+      <div class="tutor-title">
+        <span>🎓 Tutor de Aprendizaje DAM</span>
+      </div>
+      <button class="tutor-close" onclick="toggleTutorModal()" title="Cerrar">✕</button>
+    </div>
+
+    <!-- Preguntas rápidas en forma de chip -->
+    <div class="tutor-suggestions">
+      <button class="suggestion-chip" onclick="askQuestion('¿Qué hace la palabra clave const?')">¿Qué es const?</button>
+      <button class="suggestion-chip" onclick="askQuestion('¿Qué es interface en TypeScript?')">¿Qué es interface?</button>
+      <button class="suggestion-chip" onclick="askQuestion('¿Para qué sirve useState?')">¿Qué es useState?</button>
+      <button class="suggestion-chip" onclick="askQuestion('¿Qué hace useRef?')">¿Qué es useRef?</button>
+      <button class="suggestion-chip" onclick="askQuestion('¿Por qué usamos allowlist contra command injection?')">Seguridad y Allowlist</button>
+      <button class="suggestion-chip" onclick="askQuestion('¿Qué diferencia hay entre scrollTop y scrollIntoView?')">scrollTop vs scrollIntoView</button>
+      <button class="suggestion-chip" onclick="askQuestion('¿Cómo se conectan los archivos?')">Conexiones</button>
+    </div>
+
+    <div class="tutor-chat-body" id="tutor-messages">
+      <div class="chat-bubble bubble-bot">
+        👋 ¡Hola Alexis! Soy tu <strong>Tutor Virtual offline</strong> basado en esta guía.<br><br>
+        Pregúntame cualquier duda sobre el código del portfolio: palabras clave (como <code>const</code>, <code>interface</code>, <code>props</code>), hooks (<code>useState</code>, <code>useRef</code>, <code>useEffect</code>), seguridad o cómo se conectan los archivos.
+      </div>
+    </div>
+
+    <form class="tutor-input-area" onsubmit="handleTutorSubmit(event)">
+      <input
+        type="text"
+        id="tutor-input-field"
+        class="tutor-input"
+        placeholder="Ej: ¿Qué hace const? o ¿Qué es useState?"
+        autocomplete="off"
+      />
+      <button type="submit" class="tutor-send-btn">Enviar</button>
+    </form>
+  </div>
 
   <footer>
     <p>Portfolio DAM Alexis Emmanuel Llorca &bull; Creado con React, TypeScript y Tailwind CSS</p>
-    <p style="margin-top:0.3rem">Archivo 100% autónomo &bull; Puedes abrirlo en tu móvil sin conexión a internet</p>
+    <p style="margin-top:0.3rem">Archivo 100% autónomo &bull; Puedes descargarlo y abrirlo en tu móvil sin conexión a internet</p>
   </footer>
 
+  <!-- SCRIPT DEL MOTOR DE CONOCIMIENTO LOCAL (OFFLINE) -->
+  <script>
+    // Base de conocimiento exhaustiva para responder dudas en local
+    const KNOWLEDGE_BASE = [
+      {
+        id: "const",
+        keywords: ["const", "constante", "palabra clave const", "inmutable", "reasignar", "reasignacion"],
+        title: "Palabra clave 'const'",
+        step: "#paso1",
+        stepName: "Paso 1: Capa de Datos",
+        answer: "En JavaScript y TypeScript, <strong><code>const</code></strong> se utiliza para declarar una variable de <strong>referencia constante (inmutable en reasignación)</strong>.<br><br>" +
+                "• <strong>¿Qué significa?</strong> No puedes cambiar la referencia una vez asignada (no puedes hacer <code>const x = 1; x = 2;</code>).<br>" +
+                "• <strong>En objetos y arrays:</strong> Protege la variable de ser sustituida por otro valor, aunque sí permite modificar o añadir propiedades internas.<br>" +
+                "• <strong>En nuestro proyecto:</strong> Lo usamos en <code>src/data/portfolioData.ts</code> para declarar <code>personalData</code>, garantizando que el objeto central de datos nunca sea sobrescrito por error en tiempo de ejecución."
+      },
+      {
+        id: "interface",
+        keywords: ["interface", "interfaz", "interfaces", "contrato", "tipado", "type"],
+        title: "Interfaces en TypeScript",
+        step: "#paso1",
+        stepName: "Paso 1: Capa de Datos",
+        answer: "Una <strong><code>interface</code></strong> define la forma estructural obligatoria que debe tener un objeto en TypeScript (un <em>contrato de tipado</em>).<br><br>" +
+                "• <strong>Equivalencia Java:</strong> Es análogo a definir un DTO (Data Transfer Object) o una interfaz con métodos abstractos, pero en TypeScript solo existe en tiempo de compilación para que el editor te avise si falta un campo.<br>" +
+                "• <strong>Cero coste en ejecución:</strong> Al compilar a JavaScript con <code>npm run build</code>, las interfaces se borran por completo, por lo que no pesan nada en la web."
+      },
+      {
+        id: "usestate",
+        keywords: ["usestate", "state", "estado", "setstate", "reactivo", "hook de estado"],
+        title: "Hook useState()",
+        step: "#paso4",
+        stepName: "Paso 4: ProjectCard y Paso 8: Portapapeles",
+        answer: "<strong><code>useState</code></strong> es el hook fundamental de React para dotar de memoria reactiva a un componente.<br><br>" +
+                "• <strong>Sintaxis:</strong> <code>const [valor, setValor] = useState(inicial);</code><br>" +
+                "• <strong>¿Por qué no una variable normal?</strong> Cambiar una variable convencional (<code>let x = true</code>) no le avisa a React de que debe volver a dibujar la pantalla. Al llamar a <code>setValor()</code>, React programa un re-renderizado inmediato del componente.<br>" +
+                "• <strong>En nuestro portfolio:</strong> Lo usamos en <code>ProjectCard.tsx</code> (para abrir/cerrar detalles técnicos) y en <code>App.tsx</code> (para mostrar el mensaje de correo copiado durante 2 segundos)."
+      },
+      {
+        id: "useref",
+        keywords: ["useref", "ref", "referencia", "dom", "inputref", "terminalbodyref"],
+        title: "Hook useRef()",
+        step: "#paso11",
+        stepName: "Paso 11: Terminal Linux",
+        answer: "<strong><code>useRef</code></strong> crea una referencia persistente que apunta directamente a un nodo del DOM o guarda un valor mutable sin provocar re-renderizados cuando cambia.<br><br>" +
+                "• <strong>En nuestro portfolio:</strong> En <code>InteractiveTerminal.tsx</code> creamos:<br>" +
+                "  1. <code>inputRef</code> para enfocar el cursor de escritura cuando el usuario hace clic en la ventana.<br>" +
+                "  2. <code>terminalBodyRef</code> para manipular directamente la propiedad de scroll (<code>scrollTop</code>) del contenedor de la consola."
+      },
+      {
+        id: "useeffect",
+        keywords: ["useeffect", "efecto", "ciclo de vida", "side effect", "hook useeffect"],
+        title: "Hook useEffect()",
+        step: "#paso11",
+        stepName: "Paso 11: Terminal Linux",
+        answer: "<strong><code>useEffect</code></strong> permite ejecutar efectos secundarios después de que React haya renderizado el componente en el DOM.<br><br>" +
+                "• <strong>En la Terminal interactiva:</strong> Lo usamos con la dependencia <code>[history]</code>: cada vez que el usuario teclea un comando y el historial crece, <code>useEffect</code> desplaza la ventana hacia abajo para que la nueva respuesta quede a la vista."
+      },
+      {
+        id: "props",
+        keywords: ["props", "propiedades", "comunicacion", "padre e hijo", "desestructuracion"],
+        title: "Props (Propiedades en React)",
+        step: "#paso6",
+        stepName: "Paso 6: Comunicación Padre-Hijo",
+        answer: "Las <strong><code>props</code></strong> son los datos o parámetros que un componente padre le entrega a un componente hijo en React.<br><br>" +
+                "• <strong>Flujo Unidireccional:</strong> Siempre viajan de arriba a abajo y son de <em>solo lectura</em> (el hijo nunca puede modificar la prop que le dio el padre).<br>" +
+                "• <strong>Ejemplo en el proyecto:</strong> En <code>App.tsx</code> hacemos <code>&lt;ProjectCard project={project} /&gt;</code> para entregarle los datos de cada tarjeta."
+      },
+      {
+        id: "scroll",
+        keywords: ["scroll", "scrolltop", "scrollintoview", "salto", "bajada de pagina"],
+        title: "Scroll Aislado vs scrollIntoView",
+        step: "#paso11",
+        stepName: "Paso 11: Terminal Linux",
+        answer: "• <strong>El problema que teníamos:</strong> <code>scrollIntoView()</code> desplaza la ventana completa del navegador (el viewport), provocando que la página entera saltara hacia abajo al pulsar Enter.<br>" +
+                "• <strong>La solución profesional:</strong> Usar <code>terminalBodyRef.current.scrollTop = terminalBodyRef.current.scrollHeight</code>. Esto modifica únicamente el desplazamiento del <em>div interno</em> de la consola, dejando la página web estática."
+      },
+      {
+        id: "security",
+        keywords: ["seguridad", "security", "allowlist", "command injection", "inyeccion", "xss", "switch"],
+        title: "Security by Design y Allowlisting",
+        step: "#paso11",
+        stepName: "Paso 11: Terminal Linux",
+        answer: "En ciberseguridad, <strong>Allowlisting (lista blanca)</strong> consiste en rechazar por defecto todo y permitir únicamente aquello explícitamente autorizado.<br><br>" +
+                "• <strong>En la Terminal interactiva:</strong> Usamos una máquina de estados con un <code>switch</code> cerrado (<code>whoami</code>, <code>skills</code>, <code>projects</code>, etc.). Si alguien introduce <code>cat /etc/passwd</code> o <code>rm -rf /</code>, va al caso <code>default</code> sin ejecutarse jamás.<br>" +
+                "• <strong>Inmunidad XSS:</strong> React escapa por defecto cualquier texto insertado en JSX, impidiendo la ejecución de scripts maliciosos."
+      },
+      {
+        id: "map_key",
+        keywords: ["map", "key", "bucle", "reconciliacion", "primary key"],
+        title: "Método .map() y atributo 'key'",
+        step: "#paso6",
+        stepName: "Paso 6: Comunicación Padre-Hijo",
+        answer: "• <strong><code>.map()</code>:</strong> Función de orden superior de JavaScript que recorre un array y transforma cada elemento en código JSX.<br>" +
+                "• <strong><code>key</code>:</strong> Identificador único obligatorio para React (análogo a la Primary Key en SQL). Le permite a React saber exactamente qué tarjeta cambió en memoria sin tener que reconstruir todas las demás."
+      },
+      {
+        id: "conexiones",
+        keywords: ["conexion", "conexiones", "como se conectan", "arquitectura", "flujo", "archivos"],
+        title: "Conexiones entre Archivos",
+        step: "#arquitectura",
+        stepName: "Mapa de Arquitectura Global",
+        answer: "El flujo de datos del proyecto conecta 4 niveles:<br><br>" +
+                "1. <strong><code>portfolioData.ts</code>:</strong> Almacena la información central.<br>" +
+                "2. <strong><code>App.tsx</code>:</strong> Importa los datos y estructura las secciones visuales.<br>" +
+                "3. <strong><code>ProjectCard.tsx</code> & <code>InteractiveTerminal.tsx</code>:</strong> Componentes hijos que reciben datos y eventos del usuario.<br>" +
+                "4. <strong><code>deploy.yml</code>:</strong> Compila todo con Vite y lo publica en GitHub Pages."
+      },
+      {
+        id: "git",
+        keywords: ["git", "commit", "push", "github", "ramas", "master", "status"],
+        title: "Control de Versiones con Git",
+        step: "#paso9",
+        stepName: "Paso 9: Control de Versiones",
+        answer: "• <strong><code>git status</code>:</strong> Comprueba qué archivos han cambiado.<br>" +
+                "• <strong><code>git add .</code>:</strong> Prepara todos los cambios para el commit.<br>" +
+                "• <strong><code>git commit -m '...'</code>:</strong> Guarda la versión en tu historial local.<br>" +
+                "• <strong><code>git push origin master</code>:</strong> Sube los cambios a GitHub y activa el despliegue automático en GitHub Pages."
+      }
+    ];
+
+    function toggleTutorModal() {
+      const modal = document.getElementById("tutor-modal");
+      modal.classList.toggle("open");
+      if (modal.classList.contains("open")) {
+        document.getElementById("tutor-input-field").focus();
+      }
+    }
+
+    function askQuestion(queryText) {
+      document.getElementById("tutor-input-field").value = queryText;
+      processQuestion(queryText);
+    }
+
+    function handleTutorSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById("tutor-input-field");
+      const text = input.value.trim();
+      if (!text) return;
+      processQuestion(text);
+      input.value = "";
+    }
+
+    function processQuestion(question) {
+      const chatBody = document.getElementById("tutor-messages");
+
+      // 1. Añadir burbuja del usuario
+      const userBubble = document.createElement("div");
+      userBubble.className = "chat-bubble bubble-user";
+      userBubble.textContent = question;
+      chatBody.appendChild(userBubble);
+
+      // 2. Buscar en la base de conocimientos
+      const normalizedQ = question.toLowerCase()
+        .normalize("NFD").replace(/[̀-ͯ]/g, ""); // quita tildes
+
+      let bestMatch = null;
+      let highestScore = 0;
+
+      for (const item of KNOWLEDGE_BASE) {
+        let score = 0;
+        for (const kw of item.keywords) {
+          const normKw = kw.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+          if (normalizedQ.includes(normKw)) {
+            score += normKw.length * 2;
+          }
+        }
+        if (score > highestScore) {
+          highestScore = score;
+          bestMatch = item;
+        }
+      }
+
+      // 3. Generar respuesta
+      const botBubble = document.createElement("div");
+      botBubble.className = "chat-bubble bubble-bot";
+
+      if (bestMatch && highestScore > 0) {
+        botBubble.innerHTML =
+          `<div><strong>📌 ${bestMatch.title}:</strong></div><br>` +
+          bestMatch.answer +
+          `<br><a class="chat-jump-btn" href="${bestMatch.step}" onclick="toggleTutorModal()">👉 Ver en detalle en ${bestMatch.stepName}</a>`;
+      } else {
+        botBubble.innerHTML =
+          "No tengo esa palabra exacta en mi índice rápido, pero te sugiero consultar:<br><br>" +
+          "• <strong><code>const</code></strong> o <strong><code>interface</code></strong> (Paso 1: Capa de Datos)<br>" +
+          "• <strong><code>useState</code></strong> o <strong><code>props</code></strong> (Paso 4 y 6: Componentes)<br>" +
+          "• <strong><code>useRef</code></strong> o <strong><code>scrollTop</code></strong> (Paso 11: Terminal)<br>" +
+          "• <strong>Seguridad</strong> o <strong>Git</strong>.<br><br>" +
+          "<em>¡Prueba a pulsar uno de los botones de arriba o escribe una de esas palabras!</em>";
+      }
+
+      chatBody.appendChild(botBubble);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+  </script>
 </body>
 </html>
