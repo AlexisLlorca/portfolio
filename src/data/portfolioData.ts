@@ -74,7 +74,7 @@ export const personalData = {
             'Desarrollo de Aplicaciones Móviles (Android / PMDM)',
             'Programación Orientada a Objetos (Java Avanzado)',
             'Concurrencia, Procesos y Sockets (PSP)',
-            'Bases de Datos Relacionales (SQL) y PerL / Arcsistencia (JDBC)',
+            'Bases de Datos Relacionales (SQL) y Persistencia (JDBC)',
           ],
         },
       ] as EducationItem[],
